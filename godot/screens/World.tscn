@@ -441,6 +441,7 @@ size_flags_horizontal = 0
 value = 100.0
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
+tint_progress = Color( 1, 0, 0, 1 )
 nine_patch_stretch = true
 stretch_margin_left = 8
 stretch_margin_top = 8
@@ -450,4 +451,3 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-rate = 1.0
