@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var colorable_area = $Playfield/ColorableArea
+onready var bar = $CanvasLayer/TextureProgress
 
 var last_chosen_thingy = null
 
@@ -22,9 +23,11 @@ func color():
 	last_chosen_thingy = chosen_thingy
 	
 	chosen_thingy.color()
-	chosen_thingy.connect('touched', self, '_on_colored_thingy_touched', [], CONNECT_ONESHOT)
+	chosen_thingy.connect('touched', self, '_on_colored_thingy_touched', [chosen_thingy], CONNECT_ONESHOT)
 
-func _on_colored_thingy_touched():
+func _on_colored_thingy_touched(thingy):
+	bar.increase_bar(thingy.point)
 	yield(get_tree().create_timer(0.5), "timeout")
 	color()
+	
 	

@@ -3,6 +3,7 @@ extends Area2D
 onready var animation_player = $AnimationPlayer
 
 var colored = false
+export var point = 3
 
 signal touched
 
