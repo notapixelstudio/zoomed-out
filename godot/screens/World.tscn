@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actors/Hero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/Thingy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://screens/World.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 512, 300 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "zoom-out"
 length = 300.0
 step = 10.0
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:zoom")
+tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -17,38 +21,66 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 300 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 5, 5 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 5, 5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorableArea:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 300 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 5, 5 ) ]
 }
 
 [node name="World" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Hero" parent="." instance=ExtResource( 1 )]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 0.5, 0.5 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
-autoplay = "zoom-out"
-playback_speed = 10.0
-anims/zoom-out = SubResource( 1 )
 
 [node name="Thingies" type="Node2D" parent="."]
 
 [node name="Thingy" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( -160, 0 )
+position = Vector2( -256, 64 )
 
 [node name="Thingy2" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 128, 256 )
 
+[node name="Thingy32" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 128, -96 )
+
+[node name="Thingy35" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -384, 192 )
+
+[node name="Thingy36" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -384, -160 )
+
+[node name="Thingy37" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -96, -224 )
+
+[node name="Thingy38" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -320, -224 )
+
 [node name="Thingy3" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( 320, -288 )
+position = Vector2( 384, -224 )
 
 [node name="Thingy4" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 672, 288 )
 
+[node name="Thingy31" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 672, -64 )
+
+[node name="Thingy34" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 256, 128 )
+
 [node name="Thingy7" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -1056, 448 )
+
+[node name="Thingy57" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -608, 640 )
 
 [node name="Thingy6" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -864, -96 )
@@ -61,6 +93,24 @@ position = Vector2( 256, 992 )
 
 [node name="Thingy9" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 448, 448 )
+
+[node name="Thingy60" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 0, 1280 )
+
+[node name="Thingy56" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -64, 672 )
+
+[node name="Thingy55" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 704, 1184 )
+
+[node name="Thingy54" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 896, 640 )
+
+[node name="Thingy30" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 448, 96 )
+
+[node name="Thingy33" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -192, 224 )
 
 [node name="Thingy8" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 800, 1024 )
@@ -77,6 +127,21 @@ position = Vector2( 1856, -320 )
 [node name="Thingy16" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 192, -928 )
 
+[node name="Thingy42" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 64, -640 )
+
+[node name="Thingy46" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 288, -512 )
+
+[node name="Thingy51" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 960, 352 )
+
+[node name="Thingy50" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 832, 640 )
+
+[node name="Thingy49" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1056, 768 )
+
 [node name="Thingy15" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 384, -1472 )
 
@@ -85,6 +150,9 @@ position = Vector2( -608, 1344 )
 
 [node name="Thingy28" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -416, 800 )
+
+[node name="Thingy53" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 32, 992 )
 
 [node name="Thingy14" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 736, -896 )
@@ -100,6 +168,18 @@ position = Vector2( -512, -864 )
 
 [node name="Thingy22" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -608, -1216 )
+
+[node name="Thingy41" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -640, -576 )
+
+[node name="Thingy40" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -736, -928 )
+
+[node name="Thingy45" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -416, -448 )
+
+[node name="Thingy44" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -512, -800 )
 
 [node name="Thingy27" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -1856, 1376 )
@@ -119,5 +199,44 @@ position = Vector2( -416, -1760 )
 [node name="Thingy20" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -64, -1184 )
 
+[node name="Thingy39" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -192, -896 )
+
+[node name="Thingy43" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 32, -768 )
+
+[node name="Thingy48" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 576, 384 )
+
+[node name="Thingy47" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 800, 512 )
+
+[node name="Thingy59" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 128, 1216 )
+
+[node name="Thingy58" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 352, 1344 )
+
 [node name="Thingy23" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -864, 1088 )
+
+[node name="Thingy52" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -416, 1280 )
+
+[node name="Playfield" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="ColorableArea" type="Area2D" parent="Playfield"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/ColorableArea"]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Playfield"]
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Playfield"]
+autoplay = "zoom-out"
+anims/zoom-out = SubResource( 1 )

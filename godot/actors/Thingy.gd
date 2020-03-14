@@ -1,5 +1,15 @@
 extends Area2D
 
+var colored = false
+
+signal touched
+
 func _on_Thingy_body_entered(body):
-	queue_free()
+	if colored:
+		queue_free()
+		emit_signal('touched')
+		
+func color():
+	colored = true
+	modulate = Color(1,0,0,1)
 	
