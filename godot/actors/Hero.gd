@@ -1,6 +1,19 @@
 extends KinematicBody2D
 
 const speed = 200
+onready var anim = $AnimatedSprite
+var last_one = Vector2.ZERO
+onready var debug = $Debug
+
+const states = {
+	0: {-1: "walk_up",
+		1: "walk_down",
+		0: "idle"},
+	1: {-1: "walk_up_45",
+		0: "walk_horiz",
+		1: "walk_down_45"}
+	
+}
 
 func _process(delta):
 	var move_direction = Vector2(0,0)
@@ -19,5 +32,19 @@ func _process(delta):
 	if down:
 		move_direction += Vector2(0,1)
 	
-	move_and_slide(move_direction.normalized() * speed)
+	if move_direction.x == 0:
+		anim.flip_h = anim.flip_h
+	elif move_direction.x == 1:
+		anim.flip_h = false
+	else: 
+		anim.flip_h = true
+		
 	
+	if last_one != move_direction:
+		last_one = move_direction
+		var state_name = states[int(abs(last_one.x))][int(last_one.y)]
+		anim.play(state_name)
+		debug.text = state_name
+		
+	move_and_slide(move_direction.normalized() * speed)
+

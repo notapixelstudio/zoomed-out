@@ -4,11 +4,10 @@
 [ext_resource path="res://actors/Thingy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://screens/World.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 480, 268 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "zoom-out"
+[sub_resource type="Animation" id=2]
 length = 300.0
 step = 10.0
 tracks/0/type = "value"
@@ -421,11 +420,11 @@ __meta__ = {
 [node name="ColorableArea" type="Area2D" parent="Playfield"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/ColorableArea"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="Playfield"]
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Playfield"]
 autoplay = "zoom-out"
-anims/zoom-out = SubResource( 1 )
+anims/zoom-out = SubResource( 2 )
