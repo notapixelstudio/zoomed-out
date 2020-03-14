@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const speed = 200
+const speed = 400
 onready var anim = $AnimatedSprite
 var last_one = Vector2.ZERO
 onready var debug = $Debug
@@ -8,7 +8,7 @@ onready var debug = $Debug
 const states = {
 	0: {-1: "walk_up",
 		1: "walk_down",
-		0: "idle"},
+		0: "idle_down"},
 	1: {-1: "walk_up_45",
 		0: "walk_horiz",
 		1: "walk_down_45"}
