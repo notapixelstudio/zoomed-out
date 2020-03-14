@@ -5,7 +5,7 @@
 [ext_resource path="res://screens/World.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 512, 300 )
+extents = Vector2( 480, 268 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "zoom-out"
@@ -49,17 +49,8 @@ position = Vector2( -256, 64 )
 [node name="Thingy2" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 128, 256 )
 
-[node name="Thingy32" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( 128, -96 )
-
 [node name="Thingy35" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -384, 192 )
-
-[node name="Thingy36" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( -384, -160 )
-
-[node name="Thingy37" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( -96, -224 )
 
 [node name="Thingy38" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -320, -224 )
@@ -73,9 +64,6 @@ position = Vector2( 672, 288 )
 [node name="Thingy31" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 672, -64 )
 
-[node name="Thingy34" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( 256, 128 )
-
 [node name="Thingy7" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -1056, 448 )
 
@@ -84,6 +72,36 @@ position = Vector2( -608, 640 )
 
 [node name="Thingy6" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -864, -96 )
+
+[node name="Thingy69" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1344, 0 )
+
+[node name="Thingy68" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -896, 192 )
+
+[node name="Thingy67" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1152, -544 )
+
+[node name="Thingy83" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1632, -512 )
+
+[node name="Thingy82" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1184, -320 )
+
+[node name="Thingy81" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1440, -1056 )
+
+[node name="Thingy116" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -448, -1120 )
+
+[node name="Thingy97" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1984, -1088 )
+
+[node name="Thingy96" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1536, -896 )
+
+[node name="Thingy95" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1792, -1632 )
 
 [node name="Thingy5" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -512, 480 )
@@ -109,9 +127,6 @@ position = Vector2( 896, 640 )
 [node name="Thingy30" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 448, 96 )
 
-[node name="Thingy33" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( -192, 224 )
-
 [node name="Thingy8" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 800, 1024 )
 
@@ -126,6 +141,9 @@ position = Vector2( 1856, -320 )
 
 [node name="Thingy16" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 192, -928 )
+
+[node name="Thingy123" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 768, -1152 )
 
 [node name="Thingy42" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 64, -640 )
@@ -145,8 +163,20 @@ position = Vector2( 1056, 768 )
 [node name="Thingy15" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 384, -1472 )
 
+[node name="Thingy122" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 960, -1696 )
+
 [node name="Thingy29" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -608, 1344 )
+
+[node name="Thingy66" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -896, 896 )
+
+[node name="Thingy80" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1184, 384 )
+
+[node name="Thingy94" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1536, -192 )
 
 [node name="Thingy28" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -416, 800 )
@@ -157,11 +187,56 @@ position = Vector2( 32, 992 )
 [node name="Thingy14" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 736, -896 )
 
+[node name="Thingy121" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1312, -1120 )
+
 [node name="Thingy19" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -1056, -896 )
 
 [node name="Thingy18" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -864, -1440 )
+
+[node name="Thingy65" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1344, -1344 )
+
+[node name="Thingy64" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1664, 128 )
+
+[node name="Thingy79" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1184, 160 )
+
+[node name="Thingy78" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1376, -384 )
+
+[node name="Thingy93" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 832, -416 )
+
+[node name="Thingy92" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1024, -960 )
+
+[node name="Thingy120" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1600, -1184 )
+
+[node name="Thingy107" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1472, 1312 )
+
+[node name="Thingy110" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1696, 672 )
+
+[node name="Thingy112" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 832, -608 )
+
+[node name="Thingy106" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 992, 1344 )
+
+[node name="Thingy105" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1184, 800 )
+
+[node name="Thingy104" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 640, 768 )
+
+[node name="Thingy103" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 832, 224 )
 
 [node name="Thingy17" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -512, -864 )
@@ -169,11 +244,74 @@ position = Vector2( -512, -864 )
 [node name="Thingy22" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -608, -1216 )
 
+[node name="Thingy115" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 384, -1280 )
+
+[node name="Thingy119" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 960, -1504 )
+
 [node name="Thingy41" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -640, -576 )
 
 [node name="Thingy40" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -736, -928 )
+
+[node name="Thingy63" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -896, -1664 )
+
+[node name="Thingy62" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -928, -1024 )
+
+[node name="Thingy114" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 64, -1088 )
+
+[node name="Thingy118" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 640, -1312 )
+
+[node name="Thingy61" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1024, -1376 )
+
+[node name="Thingy77" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1632, -160 )
+
+[node name="Thingy102" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1440, 1024 )
+
+[node name="Thingy109" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1664, 384 )
+
+[node name="Thingy76" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1216, -1536 )
+
+[node name="Thingy75" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1504, 128 )
+
+[node name="Thingy91" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1280, -736 )
+
+[node name="Thingy90" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1248, -96 )
+
+[node name="Thingy89" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1152, -448 )
+
+[node name="Thingy101" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1312, 1312 )
+
+[node name="Thingy108" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1536, 672 )
+
+[node name="Thingy111" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 672, -608 )
+
+[node name="Thingy100" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1088, 448 )
+
+[node name="Thingy99" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1056, 1088 )
+
+[node name="Thingy98" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 960, 736 )
 
 [node name="Thingy45" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -416, -448 )
@@ -193,11 +331,53 @@ position = Vector2( -1312, 1408 )
 [node name="Thingy24" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -1408, 1056 )
 
+[node name="Thingy37" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -2144, 928 )
+
+[node name="Thingy36" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1952, 384 )
+
+[node name="Thingy34" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1600, 960 )
+
+[node name="Thingy33" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1696, 608 )
+
+[node name="Thingy74" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -2432, 416 )
+
+[node name="Thingy73" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -2240, -128 )
+
+[node name="Thingy72" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1888, 448 )
+
+[node name="Thingy71" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1984, 96 )
+
+[node name="Thingy88" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -2784, -160 )
+
+[node name="Thingy87" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -2592, -704 )
+
+[node name="Thingy86" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -2240, -128 )
+
+[node name="Thingy85" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -2336, -480 )
+
 [node name="Thingy21" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -416, -1760 )
 
 [node name="Thingy20" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -64, -1184 )
+
+[node name="Thingy113" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 928, -1248 )
+
+[node name="Thingy117" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( 1504, -1472 )
 
 [node name="Thingy39" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -192, -896 )
@@ -219,6 +399,15 @@ position = Vector2( 352, 1344 )
 
 [node name="Thingy23" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -864, 1088 )
+
+[node name="Thingy32" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1152, 640 )
+
+[node name="Thingy70" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1440, 128 )
+
+[node name="Thingy84" parent="Thingies" instance=ExtResource( 2 )]
+position = Vector2( -1792, -448 )
 
 [node name="Thingy52" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -416, 1280 )
