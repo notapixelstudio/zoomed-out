@@ -1,9 +1,14 @@
 extends KinematicBody2D
 
+class_name Hero
+
 const speed = 400
 onready var anim = $AnimatedSprite
-var last_one = Vector2.ZERO
 onready var debug = $Debug
+
+var last_one = Vector2.ZERO
+
+signal hurt 
 
 const states = {
 	0: {-1: "walk_up",
@@ -54,3 +59,5 @@ func _process(delta):
 		
 	move_and_slide(move_direction.normalized() * speed)
 
+func hurt(quantity):
+	emit_signal("hurt", quantity)

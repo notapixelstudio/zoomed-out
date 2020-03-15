@@ -2,10 +2,12 @@ extends Node2D
 
 onready var colorable_area = $Playfield/ColorableArea
 onready var bar = $CanvasLayer/TextureProgress
+onready var player = $Hero
 
 var last_chosen_thingy = null
 
 func _ready():
+	player.connect("hurt", self, "_on_player_hurt")
 	randomize()
 	yield(get_tree().create_timer(0.1), "timeout")
 	color()
@@ -18,7 +20,7 @@ func color():
 		return
 		
 	var chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
-	while last_chosen_thingy == chosen_thingy:
+	while last_chosen_thingy == chosen_thingy and chosen_thingy is Enemy :
 		chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
 	last_chosen_thingy = chosen_thingy
 	
@@ -31,3 +33,5 @@ func _on_colored_thingy_touched(thingy):
 	color()
 	
 	
+func _on_player_hurt(quantity):
+	bar.decrease_bar(quantity)
