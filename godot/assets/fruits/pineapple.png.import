@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pinapple.png-7496150d120c63d4555d08463a95f82e.stex"
+path="res://.import/pineapple.png-97afceb01625bc176d796ef94b5a97d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fruits/pinapple.png"
-dest_files=[ "res://.import/pinapple.png-7496150d120c63d4555d08463a95f82e.stex" ]
+source_file="res://assets/fruits/pineapple.png"
+dest_files=[ "res://.import/pineapple.png-97afceb01625bc176d796ef94b5a97d9.stex" ]
 
 [params]
 
