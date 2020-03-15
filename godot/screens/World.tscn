@@ -10,9 +10,8 @@
 [ext_resource path="res://assets/hud/bucket_guy.png" type="Texture" id=8]
 [ext_resource path="res://actors/Enemy.tscn" type="PackedScene" id=9]
 
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 484.326, 261.103 )
+extents = Vector2( 484.326, 240 )
 
 [sub_resource type="Animation" id=2]
 length = 300.0
@@ -59,21 +58,26 @@ position = Vector2( -256, 64 )
 
 [node name="Thingy2" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 128, 256 )
+type = 1
 
 [node name="Thingy35" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -384, 192 )
+type = 4
 
 [node name="Thingy38" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -320, -224 )
+type = 3
 
 [node name="Thingy3" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 384, -224 )
+type = 5
 
 [node name="Thingy4" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 672, 288 )
 
 [node name="Thingy31" parent="Thingies" instance=ExtResource( 2 )]
-position = Vector2( 672, -64 )
+position = Vector2( 96, -160 )
+type = 2
 
 [node name="Thingy7" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( -1056, 448 )
@@ -137,6 +141,7 @@ position = Vector2( 896, 640 )
 
 [node name="Thingy30" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 448, 96 )
+type = 6
 
 [node name="Thingy8" parent="Thingies" instance=ExtResource( 2 )]
 position = Vector2( 800, 1024 )
@@ -430,7 +435,7 @@ __meta__ = {
 }
 
 [node name="ColorableArea" type="Area2D" parent="Playfield"]
-position = Vector2( 0, 24 )
+position = Vector2( 0, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/ColorableArea"]
 shape = SubResource( 1 )
