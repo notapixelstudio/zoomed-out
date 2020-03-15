@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "SpiderController",
 "language": "GDScript",
-"path": "res://test/SpiderController.gd"
+"path": "res://actors/SpiderController.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
