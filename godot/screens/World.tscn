@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://actors/Hero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/Fruit.tscn" type="PackedScene" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://assets/hud/bucket_guy_WHITE.png" type="Texture" id=7]
 [ext_resource path="res://assets/hud/bucket_guy.png" type="Texture" id=8]
 [ext_resource path="res://assets/music/QJ_Music.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sfx/pickup/Pickup07.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sfx/pickup/Pickup02.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sfx/pickup/Pickup04.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sfx/pickup/Pickup01.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sfx/pickup/Pickup03.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sfx/pickup/Pickup08.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/sfx/pickup/Pickup05.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/sfx/pickup/Pickup06.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 484.326, 240 )
@@ -129,7 +137,40 @@ position = Vector2( 91.1753, 78.0764 )
 scale = Vector2( 0.164767, 0.164767 )
 texture = ExtResource( 8 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
 bus = "Music"
+
+[node name="Pickup1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+bus = "SFX"
+
+[node name="Pickup2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+bus = "SFX"
+
+[node name="Pickup3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+bus = "SFX"
+
+[node name="Pickup4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+bus = "SFX"
+
+[node name="Pickup5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+bus = "SFX"
+
+[node name="Pickup6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+bus = "SFX"
+
+[node name="Pickup7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+bus = "SFX"
+
+[node name="Pickup8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+bus = "SFX"
+[connection signal="value_changed" from="CanvasLayer/TextureProgress" to="." method="_on_TextureProgress_value_changed"]

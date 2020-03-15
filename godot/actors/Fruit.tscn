@@ -47,7 +47,4 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/blink = SubResource( 2 )
-
-[node name="Pickup1" type="AudioStreamPlayer" parent="."]
-bus = "SFX"
 [connection signal="body_entered" from="." to="." method="_on_Fruit_body_entered"]
