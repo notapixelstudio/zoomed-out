@@ -454,7 +454,6 @@ value = 100.0
 rounded = true
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
-tint_progress = Color( 1, 0.298039, 0.298039, 1 )
 nine_patch_stretch = true
 stretch_margin_left = 8
 stretch_margin_top = 8

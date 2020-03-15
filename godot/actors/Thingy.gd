@@ -12,9 +12,9 @@ func _on_Thingy_body_entered(body):
 		decolor()
 		emit_signal('touched')
 		
-func color():
+func color(c):
 	colored = true
-	modulate = Color(1,0.31,0.31,1)
+	modulate = c
 	animation_player.play("blink")
 
 func decolor():
