@@ -14,7 +14,7 @@ func _on_Thingy_body_entered(body):
 		
 func color():
 	colored = true
-	modulate = Color(1,0,0,1)
+	modulate = Color(1,0.31,0.31,1)
 	animation_player.play("blink")
 
 func decolor():
