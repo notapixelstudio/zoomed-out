@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bucket_guy.png-40c9195b06ee924af9640b846509453e.stex"
+path="res://.import/Spider_WALK_0003.png-9c75d7280ca72e760c53bbf9e403cad3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/bucket_guy.png"
-dest_files=[ "res://.import/bucket_guy.png-40c9195b06ee924af9640b846509453e.stex" ]
+source_file="res://assets/anim/enemies/spider/walk/Spider_WALK_0003.png"
+dest_files=[ "res://.import/Spider_WALK_0003.png-9c75d7280ca72e760c53bbf9e403cad3.stex" ]
 
 [params]
 

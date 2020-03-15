@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bucket_guy.png-40c9195b06ee924af9640b846509453e.stex"
+path="res://.import/Player_ATTACK_0000.png-9c047c6fe32da873b7a0c828d8664fb9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/bucket_guy.png"
-dest_files=[ "res://.import/bucket_guy.png-40c9195b06ee924af9640b846509453e.stex" ]
+source_file="res://assets/anim/enemies/spider/attack/Player_ATTACK_0000.png"
+dest_files=[ "res://.import/Player_ATTACK_0000.png-9c047c6fe32da873b7a0c828d8664fb9.stex" ]
 
 [params]
 
