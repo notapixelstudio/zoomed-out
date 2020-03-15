@@ -62,3 +62,10 @@ func _on_colored_thingy_touched(thingy):
 	
 func _on_player_hurt(quantity):
 	bar.decrease_bar(quantity)
+
+func game_over():
+	print("GAME OVER")
+	
+func _on_TextureProgress_value_changed(value):
+	if value <= 0:
+		game_over()
