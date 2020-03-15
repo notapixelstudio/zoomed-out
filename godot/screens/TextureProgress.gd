@@ -2,6 +2,7 @@ extends TextureProgress
 
 var timer = 0.0
 export var rate : float = 1.0
+
 func _process(delta):
 	timer += delta
 	if timer >= rate:
