@@ -39,10 +39,10 @@ animations = [ {
 "name": "idle_down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "idle_up",
-"speed": 5.0
+"name": "walk_up",
+"speed": 10.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
@@ -54,11 +54,6 @@ animations = [ {
 "name": "walk_up_45",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "walk_up",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "walk_down",
@@ -68,6 +63,11 @@ animations = [ {
 "loop": true,
 "name": "walk_down_45",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -82,7 +82,7 @@ position = Vector2( 5, -10 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 2
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
