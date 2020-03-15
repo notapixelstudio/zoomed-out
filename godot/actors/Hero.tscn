@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/anim/idle/Timeline 1_0006.png" type="Texture" id=1]
 [ext_resource path="res://actors/Hero.gd" type="Script" id=2]
@@ -31,12 +31,34 @@
 [ext_resource path="res://assets/anim/idle_back/Player_IDLE_back_0005.png" type="Texture" id=29]
 [ext_resource path="res://assets/anim/idle_back/Player_IDLE_back_0006.png" type="Texture" id=30]
 [ext_resource path="res://assets/anim/idle_back/Player_IDLE_back_0001.png" type="Texture" id=31]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_07.wav" type="AudioStream" id=32]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_10.wav" type="AudioStream" id=33]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_06.wav" type="AudioStream" id=34]
+[ext_resource path="res://utils/SoundCycle.tscn" type="PackedScene" id=35]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_11.wav" type="AudioStream" id=36]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_02.wav" type="AudioStream" id=37]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_08.wav" type="AudioStream" id=38]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_09.wav" type="AudioStream" id=39]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_01.wav" type="AudioStream" id=40]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_03.wav" type="AudioStream" id=41]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_05.wav" type="AudioStream" id=42]
+[ext_resource path="res://assets/sfx/footsteps/Footstep_04.wav" type="AudioStream" id=43]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 8 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "walk_down_45",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "idle_up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 22 ), ExtResource( 21 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 9 ) ],
@@ -58,21 +80,30 @@ animations = [ {
 "loop": true,
 "name": "walk_down",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "walk_down_45",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "idle_up",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 20.0
 height = 61.4603
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 0.3
+loop = true
+tracks/0/type = "method"
+tracks/0/path = NodePath("FootstepsCycle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
 
 [node name="Hero" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -82,7 +113,7 @@ position = Vector2( 5, -10 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 6
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -100,3 +131,10 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FootstepsCycle" parent="." instance=ExtResource( 35 )]
+streams = [ ExtResource( 40 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 33 ), ExtResource( 36 ) ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk"
+anims/walk = SubResource( 3 )
