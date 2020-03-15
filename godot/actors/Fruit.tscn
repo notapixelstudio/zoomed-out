@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/fruits/apple.png" type="Texture" id=1]
-[ext_resource path="res://actors/Thingy.gd" type="Script" id=2]
+[ext_resource path="res://actors/Fruit.gd" type="Script" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -56,4 +56,4 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/blink = SubResource( 3 )
-[connection signal="body_entered" from="." to="." method="_on_Thingy_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Fruit_body_entered"]

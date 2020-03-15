@@ -7,7 +7,7 @@ export var point = 3
 
 signal touched
 
-func _on_Thingy_body_entered(body):
+func _on_Fruit_body_entered(body):
 	if colored:
 		decolor()
 		emit_signal('touched')

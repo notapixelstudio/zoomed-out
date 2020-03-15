@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://actors/Hero.tscn" type="PackedScene" id=1]
-[ext_resource path="res://actors/Thingy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://actors/Fruit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://screens/World.gd" type="Script" id=3]
 [ext_resource path="res://assets/hud/bg.png" type="Texture" id=4]
 [ext_resource path="res://assets/hud/fill.png" type="Texture" id=5]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/hud/bucket_guy_WHITE.png" type="Texture" id=7]
 [ext_resource path="res://assets/hud/bucket_guy.png" type="Texture" id=8]
 [ext_resource path="res://actors/Enemy.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 484.326, 261.103 )
