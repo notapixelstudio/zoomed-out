@@ -59,7 +59,7 @@ func get_playfield_extents():
 	return Vector2(512*camera.zoom.x, 300*camera.zoom.y) # warning: hardcoded
 
 # scorpion spawning
-var scorpion_scene = preload('res://actors/scorpion/Scorpion.tscn')
+var scorpion_scene = preload('res://actors/crab/Crab.tscn')
 
 func spawn_scorpion():
 	var scorpion = scorpion_scene.instance()

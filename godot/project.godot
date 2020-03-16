@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Lion",
 "language": "GDScript",
-"path": "res://actors/scorpion/Scorpion.gd"
+"path": "res://actors/crab/Crab.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Scorpion",
