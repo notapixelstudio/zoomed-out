@@ -1,0 +1,218 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0007.png" type="Texture" id=1]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0006.png" type="Texture" id=2]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0001.png" type="Texture" id=3]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0006.png" type="Texture" id=4]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0004.png" type="Texture" id=5]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0003.png" type="Texture" id=6]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0005.png" type="Texture" id=7]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0000.png" type="Texture" id=8]
+[ext_resource path="res://actors/spider/Spider.gd" type="Script" id=9]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0001.png" type="Texture" id=10]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0004.png" type="Texture" id=11]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0007.png" type="Texture" id=12]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0000.png" type="Texture" id=13]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0004.png" type="Texture" id=14]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0009.png" type="Texture" id=15]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0001.png" type="Texture" id=16]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0005.png" type="Texture" id=17]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0007.png" type="Texture" id=18]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0002.png" type="Texture" id=19]
+[ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0003.png" type="Texture" id=20]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0000.png" type="Texture" id=21]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0005.png" type="Texture" id=22]
+[ext_resource path="res://assets/anim/enemies/spider/walk/Spider_WALK_0002.png" type="Texture" id=23]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0006.png" type="Texture" id=24]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0003.png" type="Texture" id=25]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0002.png" type="Texture" id=26]
+[ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0008.png" type="Texture" id=27]
+[ext_resource path="res://actors/Bullet.tscn" type="PackedScene" id=28]
+[ext_resource path="res://utils/StateMachine.gd" type="Script" id=29]
+[ext_resource path="res://assets/sfx/Spider_Attack.wav" type="AudioStream" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "idle_down",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_down_45",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk_up",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_horiz",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk_up_45",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_down",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 27 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attack",
+"speed": 14.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 80.0
+
+[sub_resource type="Animation" id=13]
+resource_name = "Attack"
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "attack", false ],
+"method": "play"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 8 ],
+"method": "shoot"
+} ]
+}
+tracks/2/type = "audio"
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 30 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+length = 3.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("AnimatedSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "idle_down", false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "None"
+
+[sub_resource type="Animation" id=18]
+length = 0.3
+loop = true
+
+[sub_resource type="AnimationNodeAnimation" id=14]
+animation = "Attack"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "None"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Attack/node = SubResource( 14 )
+states/Attack/position = Vector2( 565, 49 )
+states/Idle/node = SubResource( 6 )
+states/Idle/position = Vector2( 369, 49 )
+states/None/node = SubResource( 7 )
+states/None/position = Vector2( 108, 49 )
+states/Walk/node = SubResource( 8 )
+states/Walk/position = Vector2( 129, 148 )
+transitions = [ "Idle", "Attack", SubResource( 15 ), "Attack", "Idle", SubResource( 16 ) ]
+start_node = "None"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+
+[node name="Spider" type="KinematicBody2D"]
+script = ExtResource( 9 )
+bullet_scene = ExtResource( 28 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.818817, 1.70737 )
+scale = Vector2( 0.22902, 0.22902 )
+frames = SubResource( 1 )
+animation = "idle_down"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+anims/Attack = SubResource( 13 )
+anims/Idle = SubResource( 3 )
+anims/None = SubResource( 17 )
+anims/Walk = SubResource( 18 )
+
+[node name="StateMachine" type="AnimationTree" parent="."]
+tree_root = SubResource( 11 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 12 )
+script = ExtResource( 29 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+bus = "SFX"
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_screen_entered"]
