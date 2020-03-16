@@ -29,6 +29,8 @@ script = ExtResource( 2 )
 [node name="shadow" type="Sprite" parent="."]
 position = Vector2( 0, 23 )
 scale = Vector2( 1.2, 0.8 )
+z_index = -1
+z_as_relative = false
 texture = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

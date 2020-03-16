@@ -35,6 +35,8 @@ script = ExtResource( 9 )
 [node name="shadow" type="Sprite" parent="."]
 position = Vector2( 0, 59 )
 scale = Vector2( 1, 0.6 )
+z_index = -1
+z_as_relative = false
 texture = ExtResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -42,7 +44,7 @@ position = Vector2( 0.818817, -30.2926 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 5
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

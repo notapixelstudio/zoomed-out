@@ -4,11 +4,10 @@ class_name Spider
 
 
 export var bullet_scene : PackedScene
-export var strength = 10
+export var strength = 5
 
 signal spawn_bullet
 
-onready var timer = $Timer
 onready var state_machine = $StateMachine
 
 func shoot(how_many):

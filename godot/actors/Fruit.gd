@@ -5,20 +5,21 @@ class_name Fruit
 
 onready var animation_player = $AnimationPlayer
 onready var sprite = $Sprite
+onready var halo = $circle
 
 var colored = false
 export var point = 10
 
 const fruits_data = [
 	{'texture': 'apple', 'color': Color('#ff4c4c')},
-	{'texture': 'banana', 'color': Color('#ffdc4c')},
 	{'texture': 'tangerine', 'color': Color('#ffa04c')},
-	{'texture': 'grapes', 'color': Color('#c96ba6')},
-	{'texture': 'pineapple', 'color': Color('#b27263')},
+	{'texture': 'banana', 'color': Color('#ffdc4c')},
 	{'texture': 'pear', 'color': Color('#6ec461')},
-	{'texture': 'plum', 'color': Color('#617dc4')}
+	{'texture': 'plum', 'color': Color('#617dc4')},
+	{'texture': 'grapes', 'color': Color('#c96ba6')},
+	{'texture': 'pineapple', 'color': Color('#b27263')}
 ]
-enum types {apple, banana, tangerine, grapes, pineapple, pear, plum}
+enum types {apple, tangerine, banana, pear, plum, grapes, pineapple}
 export (types) var type = types.apple setget set_type
 
 func set_type(value):
@@ -41,6 +42,7 @@ func _on_Fruit_body_entered(body):
 func color():
 	colored = true
 	sprite.modulate = fruits_data[type]['color']
+	halo.modulate = fruits_data[type]['color']
 	animation_player.play("blink")
 	return fruits_data[type]['color']
 
@@ -48,6 +50,7 @@ func decolor():
 	colored = false
 	animation_player.play("idle")
 	sprite.modulate = Color(1,1,1,1)
+	halo.modulate = Color(1,1,1,1)
 	
 static func get_fruit_color(fruit):
 	return fruits_data[fruit]['color']

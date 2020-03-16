@@ -1,8 +1,8 @@
 extends Area2D
 
-export var speed : int = 200
+export var speed : int = 300
 export var angle : float = 0
-export var strength = 10
+export var strength = 5
 
 func _process(delta):
 	position += Vector2(speed*delta,0).rotated(angle)

@@ -34,15 +34,10 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "idle_down",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 27 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "attack",
-"speed": 14.0
+"name": "walk_horiz",
+"speed": 16.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
 "loop": true,
@@ -54,19 +49,24 @@ animations = [ {
 "name": "walk_up",
 "speed": 16.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
 "loop": true,
-"name": "walk_horiz",
-"speed": 16.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "walk_up_45",
-"speed": 16.0
+"name": "idle_down",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "walk_down_45",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 27 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attack",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk_up_45",
 "speed": 16.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
@@ -191,6 +191,8 @@ bullet_scene = ExtResource( 28 )
 [node name="shadow" type="Sprite" parent="."]
 position = Vector2( 0, 20 )
 scale = Vector2( 2.36449, 1.48598 )
+z_index = -1
+z_as_relative = false
 texture = ExtResource( 31 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -198,7 +200,7 @@ position = Vector2( 0.818817, 1.70737 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 6
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

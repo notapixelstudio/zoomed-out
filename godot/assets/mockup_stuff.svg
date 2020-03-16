@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="158.77938"
-     inkscape:cy="936.30721"
+     inkscape:zoom="0.70000001"
+     inkscape:cx="702.91357"
+     inkscape:cy="795.55908"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -107,5 +107,14 @@
        id="ellipse825"
        style="opacity:1;fill:#a6a6a6;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        r="20.505209" />
+    <ellipse
+       inkscape:export-ydpi="66"
+       inkscape:export-xdpi="66"
+       ry="20.313171"
+       rx="78.713539"
+       cy="144.39516"
+       cx="106.49479"
+       id="ellipse827"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:4;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
