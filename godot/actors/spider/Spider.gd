@@ -17,8 +17,6 @@ func shoot(how_many):
 		bullet.angle = 2*PI/how_many*i
 		emit_signal("spawn_bullet", bullet)
 		# will be taken care from World.
-	# logic for shooting, with pattern
-	return
 
 
 func _on_screen_entered():
