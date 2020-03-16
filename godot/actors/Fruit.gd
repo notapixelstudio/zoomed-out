@@ -8,7 +8,7 @@ onready var sprite = $Sprite
 onready var halo = $circle
 
 var colored = false
-export var point = 10
+export var point = 100
 
 const fruits_data = [
 	{'texture': 'apple', 'color': Color('#ff4c4c')},

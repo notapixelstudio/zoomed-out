@@ -55,8 +55,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 18, 27, 37, 46, 53, 55, 56, 63, 77, 80, 83, 90, 92, 96, 98, 101, 104, 107, 110, 113, 118, 121, 125, 128, 129, 135, 138, 141, 145, 148, 154, 157, 160, 163, 166, 167, 172, 175, 178, 181, 183, 190, 191, 194, 196, 199, 207, 212, 217, 221, 223, 225, 228, 232, 238, 240, 244, 246, 249, 251, 256, 258, 259, 262, 266, 269, 272, 275, 276, 278, 281, 285, 287, 290, 293, 295, 296, 298, 313, 314, 316, 319, 323, 325, 328, 331, 332, 334, 336, 346, 348, 350, 351, 355, 357, 360, 363, 366, 368 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 18, 27, 37, 46, 53, 55, 56, 63, 77, 80, 83, 90, 92, 96, 98, 101, 104, 107, 110, 113, 118, 121, 125, 128, 129, 135, 138, 141, 145, 148, 154, 157, 160, 163, 166, 167, 172, 175, 178, 181, 183, 190, 191, 194, 196, 199, 207, 212, 217, 221, 223, 225, 228, 232, 238, 240, 244, 246, 249, 251, 256, 258, 259, 262, 266, 269, 272, 275, 276, 278, 281, 285, 287, 290, 293, 295, 296, 298, 313, 314, 316, 319, 323, 325, 328, 331, 332, 334, 336, 340, 346, 348, 350, 351, 355, 357, 360, 363, 366, 368 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "spawn_scorpion"
@@ -326,6 +326,9 @@ tracks/2/keys = {
 "method": "spawn_lion"
 }, {
 "args": [  ],
+"method": "back_with_fruit_type"
+}, {
+"args": [  ],
 "method": "spawn_lion"
 }, {
 "args": [  ],
@@ -403,350 +406,438 @@ position = Vector2( 352, -1248 )
 
 [node name="Fruit" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 205, 79 )
+point = 100
 
 [node name="Fruit29" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 768, -352 )
+point = 100
 type = 1
 
 [node name="Fruit42" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 672, -390 )
+point = 100
 type = 1
 
 [node name="Fruit38" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 638, -254 )
+point = 100
 type = 1
 
 [node name="Fruit50" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 529, -416 )
+point = 100
 type = 1
 
 [node name="Fruit35" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -576, -320 )
+point = 100
 type = 1
 
 [node name="Fruit46" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -608, -448 )
+point = 100
 type = 1
 
 [node name="Fruit45" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -672, -413 )
+point = 100
 type = 1
 
 [node name="Fruit7" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 327, 320 )
+point = 100
 type = 1
 
 [node name="Fruit18" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 288, 368 )
+point = 100
 type = 1
 
 [node name="Fruit20" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 633, 320 )
+point = 100
 type = 1
 
 [node name="Fruit24" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -416, 480 )
+point = 100
 type = 1
 
 [node name="Fruit47" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -640, 544 )
+point = 100
 type = 1
 
 [node name="Fruit25" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 359, 408 )
+point = 100
 type = 1
 
 [node name="Fruit44" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 704, 360 )
+point = 100
 type = 1
 
 [node name="Fruit32" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 576, -288 )
+point = 100
 type = 1
 
 [node name="Fruit28" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -352, 448 )
+point = 100
 type = 1
 
 [node name="Fruit2" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 393, 230 )
+point = 100
 
 [node name="Fruit17" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -64, 250 )
+point = 100
 
 [node name="Fruit26" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 928, -32 )
+point = 100
 type = 2
 
 [node name="Fruit41" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 736, 640 )
+point = 100
 type = 2
 
 [node name="Fruit48" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 0, 704 )
+point = 100
 type = 2
 
 [node name="Fruit49" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 448, -608 )
+point = 100
 type = 2
 
 [node name="Fruit52" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1024, -512 )
+point = 100
 type = 2
 
 [node name="Fruit51" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -512, -640 )
+point = 100
 type = 2
 
 [node name="Fruit43" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -32, -544 )
+point = 100
 type = 2
 
 [node name="Fruit22" parent="Playfield" instance=ExtResource( 2 )]
-position = Vector2( -992, -512 )
+position = Vector2( -992, -256 )
+point = 100
 type = 2
 
 [node name="Fruit40" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -960, 160 )
+point = 100
 type = 2
 
 [node name="Fruit54" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -832, -192 )
+point = 100
 type = 3
 
 [node name="Fruit96" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1856, -160 )
+point = 100
 type = 3
 
 [node name="Fruit97" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1696, 320 )
+point = 100
 type = 3
 
 [node name="Fruit98" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1888, -672 )
+point = 100
 type = 3
 
 [node name="Fruit99" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1824, -448 )
+point = 100
 type = 3
 
 [node name="Fruit106" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 2112, -384 )
+point = 100
 type = 4
 
 [node name="Fruit107" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1408, -928 )
+point = 100
 type = 4
 
 [node name="Fruit108" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -2048, 704 )
+point = 100
 type = 4
 
 [node name="Fruit109" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1440, 960 )
+point = 100
 type = 4
 
 [node name="Fruit100" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1984, 256 )
+point = 100
 type = 3
 
 [node name="Fruit101" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1664, -128 )
+point = 100
 type = 3
 
 [node name="Fruit102" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 832, 928 )
+point = 100
 type = 3
 
 [node name="Fruit103" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 416, 736 )
+point = 100
 type = 3
 
 [node name="Fruit104" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -256, 960 )
+point = 100
 type = 3
 
 [node name="Fruit105" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1376, 928 )
+point = 100
 type = 3
 
 [node name="Fruit55" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -448, 320 )
+point = 100
 type = 3
 
 [node name="Fruit56" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -192, -416 )
+point = 100
 type = 3
 
 [node name="Fruit57" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 448, 544 )
+point = 100
 type = 3
 
 [node name="Fruit58" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 608, -64 )
+point = 100
 type = 3
 
 [node name="Fruit59" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1120, 608 )
+point = 100
 type = 3
 
 [node name="Fruit60" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1152, -352 )
+point = 100
 type = 3
 
 [node name="Fruit61" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 768, -704 )
+point = 100
 type = 3
 
 [node name="Fruit62" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -256, -672 )
+point = 100
 type = 3
 
 [node name="Fruit63" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1248, -352 )
+point = 100
 type = 3
 
 [node name="Fruit66" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1024, 288 )
+point = 100
 type = 3
 
 [node name="Fruit67" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1248, 192 )
+point = 100
 type = 3
 
 [node name="Fruit68" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1408, -672 )
+point = 100
 type = 3
 
 [node name="Fruit69" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1344, 704 )
+point = 100
 type = 3
 
 [node name="Fruit70" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1408, 64 )
+point = 100
 type = 4
 
 [node name="Fruit71" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 896, 288 )
+point = 100
 type = 4
 
 [node name="Fruit72" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1120, 576 )
+point = 100
 type = 4
 
 [node name="Fruit73" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1216, -32 )
+point = 100
 type = 4
 
 [node name="Fruit74" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -800, -896 )
+point = 100
 type = 4
 
 [node name="Fruit75" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -672, -640 )
+point = 100
 type = 4
 
 [node name="Fruit76" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 288, -992 )
+point = 100
 type = 4
 
 [node name="Fruit77" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1184, -960 )
+point = 100
 type = 4
 
 [node name="Fruit78" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1664, -544 )
+point = 100
 type = 5
 
 [node name="Fruit79" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1504, -640 )
+point = 100
 type = 5
 
 [node name="Fruit80" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1600, -704 )
+point = 100
 type = 5
 
 [node name="Fruit81" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1504, -448 )
+point = 100
 type = 5
 
 [node name="Fruit86" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1440, 448 )
+point = 100
 type = 5
 
 [node name="Fruit85" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1568, 384 )
+point = 100
 type = 5
 
 [node name="Fruit84" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1504, 288 )
+point = 100
 type = 5
 
 [node name="Fruit87" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 448, -832 )
+point = 100
 type = 5
 
 [node name="Fruit88" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 544, -928 )
+point = 100
 type = 5
 
 [node name="Fruit89" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 576, -768 )
+point = 100
 type = 5
 
 [node name="Fruit90" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 704, -1024 )
+point = 100
 type = 5
 
 [node name="Fruit83" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1536, 512 )
+point = 100
 type = 5
 
 [node name="Fruit82" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1312, -704 )
+point = 100
 type = 5
 
 [node name="Fruit64" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1344, 544 )
+point = 100
 type = 3
 
 [node name="Fruit91" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1792, 768 )
+point = 100
 type = 6
 
 [node name="Fruit92" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -1888, -896 )
+point = 100
 type = 6
 
 [node name="Fruit93" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1920, -896 )
+point = 100
 type = 6
 
 [node name="Fruit94" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 96, -960 )
+point = 100
 type = 6
 
 [node name="Fruit95" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 1856, 864 )
+point = 100
 type = 6
 
 [node name="Fruit65" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -608, 768 )
+point = 100
 type = 3
 
 [node name="Fruit53" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 0, 512 )
+point = 100
 type = 3
 
 [node name="Fruit39" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -928, 512 )
+point = 100
 type = 2
 
 [node name="Fruit3" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -416, -96 )
+point = 100
 
 [node name="Fruit4" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -608, 384 )
+point = 100
 type = 1
 
 [node name="Areas" type="Node2D" parent="."]
@@ -757,14 +848,14 @@ __meta__ = {
 
 [node name="ColorableArea" type="Area2D" parent="Areas"]
 position = Vector2( 0, 32 )
-scale = Vector2( 0.75, 0.75 )
+scale = Vector2( 5, 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ColorableArea"]
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="Areas"]
 current = true
-zoom = Vector2( 0.75, 0.75 )
+zoom = Vector2( 5, 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Areas"]
 autoplay = "zoom-out"
@@ -802,13 +893,13 @@ __meta__ = {
 }
 
 [node name="BucketGuyHeadWHITE" type="Sprite" parent="CanvasLayer/PlayerHUD"]
-position = Vector2( 91.1753, 78.0764 )
-scale = Vector2( 0.164767, 0.164767 )
+position = Vector2( 100, 60 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 7 )
 
 [node name="BucketGuyHead" type="Sprite" parent="CanvasLayer/PlayerHUD"]
-position = Vector2( 91.1753, 78.0764 )
-scale = Vector2( 0.164767, 0.164767 )
+position = Vector2( 100, 60 )
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 8 )
 
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource( 15 )]

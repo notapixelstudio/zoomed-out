@@ -118,6 +118,7 @@ tracks/3/keys = {
 "colorable",
 ]]
 script = ExtResource( 2 )
+point = 10
 
 [node name="circle" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )

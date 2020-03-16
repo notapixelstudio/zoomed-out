@@ -93,7 +93,7 @@ func _on_Spider_spawn_bullet(bullet):
 	
 func advance_fruit_type():
 	next_fruit_type = min(next_fruit_type+1, len(Fruit.types))
-	bar.max_value += 2
+	bar.max_value += 3
 
 func back_with_fruit_type():
 	next_fruit_type = max(next_fruit_type-1, 0)

@@ -124,7 +124,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-length = 3.0
+length = 4.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("AnimatedSprite")
 tracks/0/interp = 1
@@ -200,7 +200,7 @@ position = Vector2( 0.818817, 1.70737 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 4
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
