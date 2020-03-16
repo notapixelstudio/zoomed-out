@@ -5,8 +5,7 @@ class_name Hero
 const speed = 400
 onready var anim = $AnimatedSprite
 onready var debug = $Debug
-
-var last_one = Vector2.ZERO
+onready var state_machine = $StateMachine
 
 signal hurt 
 
@@ -17,13 +16,15 @@ const states = {
 	1: {-1: "walk_up_45",
 		0: "walk_horiz",
 		1: "walk_down_45"}
-	
 }
 
 var aim = "up" # or down
+var move_direction = Vector2(0,0)
 
 func _process(delta):
-	var move_direction = Vector2(0,0)
+	state_machine.update(delta)
+	
+	move_direction = Vector2(0,0)
 	
 	var left = Input.is_action_pressed("ui_left")
 	var right = Input.is_action_pressed("ui_right")
@@ -48,16 +49,11 @@ func _process(delta):
 	else: 
 		anim.flip_h = true
 		
-	
-	if last_one != move_direction:
-		last_one = move_direction
-		var state_name = states[int(abs(last_one.x))][int(last_one.y)]
-		if state_name == "idle_":
-			state_name = state_name + aim
-		anim.play(state_name)
-		debug.text = state_name
-		
 	move_and_slide(move_direction.normalized() * speed)
 
 func hurt(quantity):
 	emit_signal("hurt", quantity)
+
+func _on_StateMachine_transition(from, to):
+	debug.text = to
+	

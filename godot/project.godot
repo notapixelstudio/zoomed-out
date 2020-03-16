@@ -22,18 +22,24 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Hero",
 "language": "GDScript",
-"path": "res://actors/Hero.gd"
+"path": "res://actors/hero/Hero.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "SpiderController",
 "language": "GDScript",
 "path": "res://actors/SpiderController.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://utils/State.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
 "Fruit": "",
 "Hero": "",
-"SpiderController": ""
+"SpiderController": "",
+"State": ""
 }
 
 [application]
