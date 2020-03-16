@@ -33,7 +33,7 @@ height = 45.0
 script = ExtResource( 9 )
 
 [node name="shadow" type="Sprite" parent="."]
-position = Vector2( 0, 55 )
+position = Vector2( 0, 59 )
 scale = Vector2( 1, 0.6 )
 texture = ExtResource( 12 )
 
