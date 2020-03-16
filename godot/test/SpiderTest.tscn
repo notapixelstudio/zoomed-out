@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://actors/SpiderController.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/Spider.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/anim/idle/Timeline 1_0008.png" type="Texture" id=2]
 [ext_resource path="res://assets/anim/idle/Timeline 1_0004.png" type="Texture" id=3]
 [ext_resource path="res://assets/anim/idle/Timeline 1_0002.png" type="Texture" id=4]
@@ -29,5 +29,5 @@ position = Vector2( 253.864, 302.96 )
 scale = Vector2( 0.229, 0.229 )
 frames = SubResource( 1 )
 animation = "ref_idle"
-frame = 6
+frame = 5
 playing = true

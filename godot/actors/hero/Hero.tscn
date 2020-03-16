@@ -92,22 +92,7 @@ height = 61.4603
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
-length = 12.0
 loop = true
-tracks/0/type = "audio"
-tracks/0/path = NodePath("SFX")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 22 )
-} ],
-"times": PoolRealArray( 2.5 )
-}
 
 [sub_resource type="Animation" id=11]
 resource_name = "None"
@@ -116,34 +101,6 @@ resource_name = "None"
 resource_name = "Walk"
 length = 0.3
 loop = true
-tracks/0/type = "method"
-tracks/0/path = NodePath("FootstepsCycle")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "play"
-} ]
-}
-tracks/1/type = "audio"
-tracks/1/path = NodePath("SFX")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": null
-} ],
-"times": PoolRealArray( 0 )
-}
 
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Idle"
@@ -178,7 +135,7 @@ position = Vector2( 5, -10 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 1
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

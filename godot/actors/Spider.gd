@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-class_name SpiderController
+class_name Spider
 
 
 export var bullet_scene : PackedScene

@@ -49,7 +49,7 @@ func color():
 		return
 		
 	var chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
-	while last_chosen_thingy == chosen_thingy or chosen_thingy is Enemy or chosen_thingy.type != next_fruit:
+	while last_chosen_thingy == chosen_thingy or chosen_thingy is Spider or chosen_thingy.type != next_fruit:
 		chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
 	last_chosen_thingy = chosen_thingy
 	
