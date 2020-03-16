@@ -10,4 +10,7 @@ func _on_Play_pressed():
 
 
 func _on_Quit_pressed():
-	pass # Replace with function body.
+	$VBoxContainer/Quit.disabled = true
+	anim.play("Disappear")
+	yield(anim, "animation_finished")
+	get_tree().quit()
