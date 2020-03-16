@@ -45,6 +45,7 @@ func color():
 
 func decolor():
 	colored = false
+	animation_player.play("idle")
 	modulate = Color(1,1,1,1)
 	
 static func get_fruit_color(fruit):
