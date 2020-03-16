@@ -15,7 +15,6 @@ func _process(delta):
 		factor = 1.0
 		
 
-
 func _on_Area2D_body_entered(body):
 	if body is Hero:
 		body.hurt(strength)
