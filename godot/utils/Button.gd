@@ -1,28 +1,31 @@
-extends Button
+extends TextureButton
 
+export var normal_texture : Texture
+export var hover_texture : Texture
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var sprite = $Sprite
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
+	sprite.texture = normal_texture
+	
 func _on_Play_focus_entered():
+	sprite.texture = hover_texture
 	$Hover.play()
 
 
 func _on_Play_mouse_entered():
+	sprite.texture = hover_texture
 	$Hover.play()
 
 
 func _on_Play_pressed():
+	sprite.texture = hover_texture
 	$Press.play()
+
+
+func _on_Play_mouse_exited():
+	sprite.texture = normal_texture
+
+
+func _on_Play_focus_exited():
+	sprite.texture = normal_texture

@@ -1,11 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/hud/MenuArt.png" type="Texture" id=1]
+[ext_resource path="res://assets/hud/Menu_Button_QUIT_active.png" type="Texture" id=1]
 [ext_resource path="res://utils/Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/music/Intro_Music.wav" type="AudioStream" id=3]
 [ext_resource path="res://screens/Menu.gd" type="Script" id=4]
+[ext_resource path="res://assets/hud/MenuSplashArt.png" type="Texture" id=6]
+[ext_resource path="res://assets/hud/Menu_Button_QUIT_inactive.png" type="Texture" id=7]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Disappear"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -29,40 +31,41 @@ __meta__ = {
 }
 
 [node name="MenuArt" type="TextureRect" parent="."]
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -299.0
-margin_bottom = 299.0
-texture = ExtResource( 1 )
+anchor_bottom = 1.0
+texture = ExtResource( 6 )
 expand = true
-stretch_mode = 6
+stretch_mode = 7
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 739.0
-margin_top = 68.0
-margin_right = 877.0
-margin_bottom = 222.0
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 191.0
+margin_top = 473.0
+margin_right = 827.0
+margin_bottom = 586.0
 custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Play" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 308.0
+margin_bottom = 113.0
 
 [node name="Quit" parent="VBoxContainer" instance=ExtResource( 2 )]
-margin_top = 74.0
-margin_bottom = 128.0
-text = "Quit"
+margin_left = 328.0
+margin_right = 636.0
+margin_bottom = 113.0
+normal_texture = ExtResource( 7 )
+hover_texture = ExtResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Disappear = SubResource( 2 )
+anims/Disappear = SubResource( 1 )
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
