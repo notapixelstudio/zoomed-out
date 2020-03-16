@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Crab",
+"language": "GDScript",
+"path": "res://actors/crab/Crab.gd"
+}, {
 "base": "Area2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -23,11 +28,6 @@ _global_script_classes=[ {
 "class": "Hero",
 "language": "GDScript",
 "path": "res://actors/hero/Hero.gd"
-}, {
-"base": "KinematicBody2D",
-"class": "Lion",
-"language": "GDScript",
-"path": "res://actors/crab/Crab.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Scorpion",
@@ -45,10 +45,10 @@ _global_script_classes=[ {
 "path": "res://utils/State.gd"
 } ]
 _global_script_class_icons={
+"Crab": "",
 "Enemy": "",
 "Fruit": "",
 "Hero": "",
-"Lion": "",
 "Scorpion": "",
 "Spider": "",
 "State": ""

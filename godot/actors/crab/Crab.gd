@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-class_name Lion
+class_name Crab
 
-export var strength = 2
+export var strength = 10
 export var speed = Vector2(160,0)
 
 var factor = 1.0

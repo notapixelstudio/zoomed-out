@@ -132,9 +132,8 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
-radius = 20.0
-height = 61.4603
+[sub_resource type="CircleShape2D" id=14]
+radius = 35.0
 
 [sub_resource type="Animation" id=4]
 length = 12.0
@@ -235,7 +234,7 @@ position = Vector2( 5, -74 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 1
+frame = 4
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -243,12 +242,12 @@ position = Vector2( 5, -74 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 2 )
 animation = "idle_down"
-frame = 6
+frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -46 )
-shape = SubResource( 3 )
+position = Vector2( 0, -20 )
+shape = SubResource( 14 )
 
 [node name="Debug" type="Label" parent="."]
 visible = false

@@ -4,6 +4,7 @@ class_name Spider
 
 
 export var bullet_scene : PackedScene
+export var strength = 10
 
 signal spawn_bullet
 
@@ -22,3 +23,6 @@ func shoot(how_many):
 func _on_screen_entered():
 	state_machine.travel('Idle')
 	
+func _on_Area2D_body_entered(body):
+	if body is Hero:
+		body.hurt(strength)
