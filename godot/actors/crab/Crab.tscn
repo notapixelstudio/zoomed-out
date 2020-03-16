@@ -15,21 +15,21 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 68.7662
-height = 18.7747
+radius = 50.0
+height = 16.0
 
 [node name="Crab" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.818817, -43.2926 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.18, 0.18 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -36.8223 )
+position = Vector2( 0, -25 )
 rotation = 1.5708
 shape = SubResource( 2 )

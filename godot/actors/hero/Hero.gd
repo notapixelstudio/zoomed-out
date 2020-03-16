@@ -64,3 +64,6 @@ func hurt(quantity):
 func _on_StateMachine_transition(from, to):
 	debug.text = to
 	
+func color(c):
+	anim.modulate = c
+	

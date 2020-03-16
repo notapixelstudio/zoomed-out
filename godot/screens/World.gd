@@ -27,7 +27,7 @@ func _ready():
 func color():
 	bar.tint_progress = next_color
 	bucket_head.modulate = next_color
-	player.modulate = next_color
+	player.color(next_color)
 	
 	yield(get_tree().create_timer(1), "timeout")
 	

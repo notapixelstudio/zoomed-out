@@ -55,8 +55,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 18, 27, 37, 46, 54, 56, 63, 83, 90, 100, 123, 126, 135, 167, 172, 183, 190, 207, 223, 228, 232, 246, 256, 266, 272, 278, 293, 296 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 18, 27, 37, 46, 54, 56, 63, 78, 83, 90, 100, 123, 126, 135, 167, 172, 183, 190, 207, 223, 228, 232, 246, 256, 266, 272, 278, 293, 296 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "spawn_scorpion"
@@ -78,6 +78,9 @@ tracks/2/keys = {
 }, {
 "args": [  ],
 "method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
 }, {
 "args": [  ],
 "method": "spawn_scorpion"
@@ -153,13 +156,13 @@ script = ExtResource( 3 )
 position = Vector2( -211, 101 )
 
 [node name="Spider1" parent="Playfield" instance=ExtResource( 10 )]
-position = Vector2( 1024, 384 )
+position = Vector2( 1012, 384 )
 
 [node name="Spider2" parent="Playfield" instance=ExtResource( 10 )]
-position = Vector2( -1792, -608 )
+position = Vector2( -896, -768 )
 
 [node name="Spider3" parent="Playfield" instance=ExtResource( 10 )]
-position = Vector2( -1024, 960 )
+position = Vector2( -1024, 768 )
 
 [node name="Spider4" parent="Playfield" instance=ExtResource( 10 )]
 position = Vector2( 1248, -1152 )
@@ -242,13 +245,14 @@ __meta__ = {
 
 [node name="ColorableArea" type="Area2D" parent="Areas"]
 position = Vector2( 0, 32 )
+scale = Vector2( 2.04, 2.04 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ColorableArea"]
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="Areas"]
 current = true
-zoom = Vector2( 0.75, 0.75 )
+zoom = Vector2( 1.855, 1.855 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Areas"]
 autoplay = "zoom-out"
