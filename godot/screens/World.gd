@@ -2,12 +2,13 @@ extends Node2D
 
 onready var colorable_area = $Areas/ColorableArea
 onready var colorable_area_shape = $Areas/ColorableArea/CollisionShape2D
-onready var bar = $CanvasLayer/TextureProgress
+onready var bar = $CanvasLayer/PlayerHUD/BarProgress
 onready var player = $Playfield/Hero
 onready var playfield = $Playfield
-onready var bucket_head = $CanvasLayer/BucketGuyHead
+onready var bucket_head = $CanvasLayer/PlayerHUD/BucketGuyHead
 onready var pickup_sound_cycle = $PickupSoundCycle
 onready var camera = $Areas/Camera2D
+onready var player_hud = $CanvasLayer/PlayerHUD
 
 var next_color = Fruit.get_fruit_color(Fruit.types.apple)
 
@@ -48,6 +49,8 @@ func _on_colored_thingy_touched(thingy):
 	color()
 	
 func _on_player_hurt(quantity):
+	player_hud.shake()
+	print("player got hurt for "+ str(quantity))
 	bar.decrease_bar(quantity)
 
 func game_over():

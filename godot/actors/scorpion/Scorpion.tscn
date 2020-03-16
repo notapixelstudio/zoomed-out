@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://actors/scorpion/Scorpion.gd" type="Script" id=1]
 [ext_resource path="res://assets/scorpion-mockup.png" type="Texture" id=2]
@@ -15,6 +15,10 @@ animations = [ {
 radius = 30.0
 height = 50.0
 
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 40.0
+height = 50.0
+
 [node name="Scorpion" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
@@ -29,3 +33,11 @@ playing = true
 position = Vector2( 0, -10 )
 rotation = 1.5708
 shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, -10 )
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
