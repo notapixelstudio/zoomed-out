@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://actors/hero/Hero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/Fruit.tscn" type="PackedScene" id=2]
@@ -11,15 +11,17 @@
 [ext_resource path="res://assets/music/QJ_Music.wav" type="AudioStream" id=9]
 [ext_resource path="res://actors/spider/Spider.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/sfx/pickup/Pickup02.wav" type="AudioStream" id=11]
+[ext_resource path="res://screens/ShakeyHUD.gd" type="Script" id=12]
 [ext_resource path="res://assets/sfx/pickup/Pickup01.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/sfx/pickup/Pickup03.wav" type="AudioStream" id=14]
+[ext_resource path="res://screens/GameOverScreen.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/sfx/pickup/Pickup05.wav" type="AudioStream" id=16]
 [ext_resource path="res://utils/SoundCycle.tscn" type="PackedScene" id=18]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 360, 180 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 300.0
 step = 1.0
 tracks/0/type = "value"
@@ -242,7 +244,7 @@ __meta__ = {
 position = Vector2( 0, 32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ColorableArea"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="Areas"]
 current = true
@@ -250,15 +252,18 @@ zoom = Vector2( 0.75, 0.75 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Areas"]
 autoplay = "zoom-out"
-anims/zoom-out = SubResource( 3 )
+anims/zoom-out = SubResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureProgress" type="TextureProgress" parent="CanvasLayer"]
+[node name="PlayerHUD" type="Node2D" parent="CanvasLayer"]
+script = ExtResource( 12 )
+
+[node name="BarProgress" type="TextureProgress" parent="CanvasLayer/PlayerHUD"]
 anchor_right = 1.0
 margin_left = 129.0
 margin_top = 41.0
-margin_right = -25.0
+margin_right = 1008.0
 margin_bottom = 84.0
 size_flags_horizontal = 0
 max_value = 10.0
@@ -276,15 +281,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BucketGuyHeadWHITE" type="Sprite" parent="CanvasLayer"]
+[node name="BucketGuyHeadWHITE" type="Sprite" parent="CanvasLayer/PlayerHUD"]
 position = Vector2( 91.1753, 78.0764 )
 scale = Vector2( 0.164767, 0.164767 )
 texture = ExtResource( 7 )
 
-[node name="BucketGuyHead" type="Sprite" parent="CanvasLayer"]
+[node name="BucketGuyHead" type="Sprite" parent="CanvasLayer/PlayerHUD"]
 position = Vector2( 91.1753, 78.0764 )
 scale = Vector2( 0.164767, 0.164767 )
 texture = ExtResource( 8 )
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource( 15 )]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
@@ -299,4 +306,4 @@ bus = "SFX"
 [connection signal="spawn_bullet" from="Playfield/Spider3" to="." method="_on_Spider_spawn_bullet"]
 [connection signal="spawn_bullet" from="Playfield/Spider4" to="." method="_on_Spider_spawn_bullet"]
 [connection signal="spawn_bullet" from="Playfield/Spider5" to="." method="_on_Spider_spawn_bullet"]
-[connection signal="value_changed" from="CanvasLayer/TextureProgress" to="." method="_on_TextureProgress_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/PlayerHUD/BarProgress" to="." method="_on_TextureProgress_value_changed"]
