@@ -62,9 +62,8 @@ func game_over():
 	
 	
 func _on_TextureProgress_value_changed(value):
-	pass
-	#if value <= 0:
-	#	game_over()
+	if value <= 0:
+		game_over()
 
 func get_playfield_extents():
 	return Vector2(512*camera.zoom.x, 300*camera.zoom.y) # warning: hardcoded
@@ -93,7 +92,7 @@ func _on_Spider_spawn_bullet(bullet):
 	
 func advance_fruit_type():
 	next_fruit_type = min(next_fruit_type+1, len(Fruit.types))
-	bar.max_value += 3
+	bar.max_value += 2
 
 func back_with_fruit_type():
 	next_fruit_type = max(next_fruit_type-1, 0)
