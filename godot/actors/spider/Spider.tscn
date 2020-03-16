@@ -32,8 +32,7 @@
 [ext_resource path="res://actors/spider/states/Idle.gd" type="Script" id=30]
 [ext_resource path="res://actors/spider/states/Walk.gd" type="Script" id=31]
 
-
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
 "loop": true,
@@ -76,45 +75,44 @@ animations = [ {
 "speed": 14.0
 } ]
 
-[sub_resource type="CircleShape2D" id=14]
+[sub_resource type="CircleShape2D" id=2]
 radius = 80.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
 loop = true
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=4]
 resource_name = "None"
 
-[sub_resource type="Animation" id=4]
-resource_name = "Walk"
+[sub_resource type="Animation" id=5]
 length = 0.3
 loop = true
 
-[sub_resource type="AnimationNodeAnimation" id=5]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "None"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachine" id=16]
-states/Idle/node = SubResource( 5 )
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Idle/node = SubResource( 6 )
 states/Idle/position = Vector2( 369, 49 )
-states/None/node = SubResource( 12 )
+states/None/node = SubResource( 7 )
 states/None/position = Vector2( 108, 49 )
-states/Walk/node = SubResource( 6 )
+states/Walk/node = SubResource( 8 )
 states/Walk/position = Vector2( 544, 49 )
-transitions = [ "Idle", "Walk", SubResource( 7 ), "Walk", "Idle", SubResource( 8 ) ]
+transitions = [ "Idle", "Walk", SubResource( 9 ), "Walk", "Idle", SubResource( 10 ) ]
 start_node = "Walk"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="Spider" type="KinematicBody2D"]
 script = ExtResource( 9 )
@@ -123,25 +121,25 @@ bullet_scene = ExtResource( 28 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.818817, 1.70737 )
 scale = Vector2( 0.22902, 0.22902 )
-frames = SubResource( 13 )
+frames = SubResource( 1 )
 animation = "idle_down"
-frame = 6
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 14 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Idle = SubResource( 3 )
-anims/None = SubResource( 11 )
-anims/Walk = SubResource( 4 )
+anims/None = SubResource( 4 )
+anims/Walk = SubResource( 5 )
 
 [node name="StateMachine" type="AnimationTree" parent="."]
-tree_root = SubResource( 16 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 15 )
+parameters/playback = SubResource( 12 )
 script = ExtResource( 29 )
 
 [node name="Idle" type="Node" parent="StateMachine"]

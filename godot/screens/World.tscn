@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://actors/hero/Hero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/Fruit.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://assets/sfx/pickup/Pickup02.wav" type="AudioStream" id=11]
 [ext_resource path="res://assets/sfx/pickup/Pickup01.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/sfx/pickup/Pickup03.wav" type="AudioStream" id=14]
-[ext_resource path="res://actors/Obstacle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/sfx/pickup/Pickup05.wav" type="AudioStream" id=16]
 [ext_resource path="res://utils/SoundCycle.tscn" type="PackedScene" id=18]
 
@@ -54,8 +53,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 18, 27, 37, 46, 59, 90, 100, 135, 190, 228, 256, 266, 278, 293 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 18, 27, 37, 46, 54, 56, 63, 83, 90, 100, 123, 126, 135, 167, 172, 183, 190, 207, 223, 228, 232, 246, 256, 266, 272, 278, 293, 296 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "spawn_scorpion"
@@ -70,7 +69,16 @@ tracks/2/keys = {
 "method": "spawn_lion"
 }, {
 "args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
 "method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
 }, {
 "args": [  ],
 "method": "spawn_lion"
@@ -79,7 +87,40 @@ tracks/2/keys = {
 "method": "spawn_lion"
 }, {
 "args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
 "method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_scorpion"
 }, {
 "args": [  ],
 "method": "spawn_lion"
@@ -88,7 +129,7 @@ tracks/2/keys = {
 "method": "spawn_lion"
 }, {
 "args": [  ],
-"method": "spawn_lion"
+"method": "spawn_scorpion"
 }, {
 "args": [  ],
 "method": "spawn_lion"
@@ -97,7 +138,7 @@ tracks/2/keys = {
 "method": "spawn_lion"
 }, {
 "args": [  ],
-"method": "spawn_lion"
+"method": "spawn_scorpion"
 } ]
 }
 
@@ -110,41 +151,82 @@ script = ExtResource( 3 )
 position = Vector2( -211, 101 )
 
 [node name="Spider1" parent="Playfield" instance=ExtResource( 10 )]
-position = Vector2( 960, 256 )
+position = Vector2( 1024, 384 )
+
+[node name="Spider2" parent="Playfield" instance=ExtResource( 10 )]
+position = Vector2( -1792, -608 )
+
+[node name="Spider3" parent="Playfield" instance=ExtResource( 10 )]
+position = Vector2( -1024, 960 )
+
+[node name="Spider4" parent="Playfield" instance=ExtResource( 10 )]
+position = Vector2( 1248, -928 )
+
+[node name="Spider5" parent="Playfield" instance=ExtResource( 10 )]
+position = Vector2( 352, -1024 )
 
 [node name="Fruit" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 205, 37 )
 
 [node name="Fruit7" parent="Playfield" instance=ExtResource( 2 )]
-position = Vector2( 32, -480 )
+position = Vector2( -384, -416 )
+type = 1
+
+[node name="Fruit8" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( -1152, 608 )
 
 [node name="Fruit6" parent="Playfield" instance=ExtResource( 2 )]
-position = Vector2( -320, 480 )
+position = Vector2( -256, 384 )
+type = 1
+
+[node name="Fruit11" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( -1152, -96 )
+
+[node name="Fruit12" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 544, -704 )
 
 [node name="Fruit2" parent="Playfield" instance=ExtResource( 2 )]
-position = Vector2( 390, 237 )
+position = Vector2( 400, 224 )
+
+[node name="Fruit16" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 160, -256 )
+
+[node name="Fruit17" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( -64, 256 )
+
+[node name="Fruit18" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 64, 320 )
+
+[node name="Fruit15" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 1632, -320 )
+type = 5
+
+[node name="Fruit9" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( -640, -608 )
 type = 5
 
 [node name="Fruit3" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -416, -96 )
+
+[node name="Fruit14" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 224, 832 )
 type = 1
 
 [node name="Fruit4" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -608, 384 )
-type = 3
+type = 1
 
 [node name="Fruit5" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 768, -256 )
+type = 5
+
+[node name="Fruit13" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( -1664, 320 )
 type = 4
 
-[node name="Obstacle" parent="Playfield" instance=ExtResource( 15 )]
-position = Vector2( -416, 352 )
-
-[node name="Obstacle3" parent="Playfield" instance=ExtResource( 15 )]
-position = Vector2( -224, 544 )
-
-[node name="Obstacle2" parent="Playfield" instance=ExtResource( 15 )]
-position = Vector2( 672, -128 )
+[node name="Fruit10" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 960, 608 )
+type = 4
 
 [node name="Areas" type="Node2D" parent="."]
 __meta__ = {
@@ -154,14 +236,13 @@ __meta__ = {
 
 [node name="ColorableArea" type="Area2D" parent="Areas"]
 position = Vector2( 0, 32 )
-scale = Vector2( 1.4, 1.4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ColorableArea"]
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="Areas"]
 current = true
-zoom = Vector2( 1.175, 1.175 )
+zoom = Vector2( 0.75, 0.75 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Areas"]
 autoplay = "zoom-out"

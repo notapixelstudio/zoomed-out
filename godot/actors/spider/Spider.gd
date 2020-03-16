@@ -8,7 +8,6 @@ export var bullet_scene : PackedScene
 signal spawn_bullet
 
 onready var anim = $AnimatedSprite
-onready var debug = $Debug
 
 func shoot(how_many):
 	for i in how_many:
