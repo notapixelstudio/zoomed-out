@@ -4,6 +4,7 @@ onready var colorable_area = $Playfield/ColorableArea
 onready var bar = $CanvasLayer/TextureProgress
 onready var player = $Hero
 onready var bucket_head = $CanvasLayer/BucketGuyHead
+onready var pickup_sound_cycle = $PickupSoundCycle
 
 const fruits = [
 	Fruit.types.apple,
@@ -21,22 +22,6 @@ var next_fruit = fruits[next_fruit_index]
 func prepare_next_fruit():
 	next_fruit_index = (next_fruit_index + 1) % len(fruits)
 	next_fruit = fruits[next_fruit_index]
-
-onready var pickup_sfxs = [
-	$Pickup1,
-	$Pickup2,
-	$Pickup3,
-#	$Pickup4,
-	$Pickup5,
-#	$Pickup6,
-#	$Pickup7,
-#	$Pickup8
-]
-var pickup_sfx_i = 0
-
-func play_pickup_sfx():
-	pickup_sfxs[pickup_sfx_i].play()
-	pickup_sfx_i = (pickup_sfx_i+1) % len(pickup_sfxs)
 
 var last_chosen_thingy = null
 
@@ -73,7 +58,7 @@ func color():
 	
 func _on_colored_thingy_touched(thingy):
 	bar.increase_bar(thingy.point)
-	play_pickup_sfx()
+	pickup_sound_cycle.play()
 	color()
 	
 func _on_player_hurt(quantity):
