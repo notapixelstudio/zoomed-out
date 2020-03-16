@@ -25,6 +25,8 @@ func prepare_next_fruit():
 var last_chosen_thingy = null
 
 func _ready():
+	for shooter in get_tree().get_nodes_in_group("shooting"):
+		shooter.connect("spawn_bullet", self, "spawn_bullet")
 	player.connect("hurt", self, "_on_player_hurt")
 	randomize()
 	yield(get_tree().create_timer(0.1), "timeout")
@@ -48,7 +50,7 @@ func color():
 		return
 		
 	var chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
-	while last_chosen_thingy == chosen_thingy or chosen_thingy is Enemy or chosen_thingy.type != next_fruit:
+	while last_chosen_thingy == chosen_thingy or not chosen_thingy in get_tree().get_nodes_in_group("colorable") or chosen_thingy.type != next_fruit:
 		chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
 	last_chosen_thingy = chosen_thingy
 	
@@ -69,3 +71,7 @@ func game_over():
 func _on_TextureProgress_value_changed(value):
 	if value <= 0:
 		game_over()
+
+func spawn_bullet(bullet):
+	add_child(bullet)
+	
