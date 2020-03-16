@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0007.png" type="Texture" id=1]
 [ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0006.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://actors/Bullet.tscn" type="PackedScene" id=28]
 [ext_resource path="res://utils/StateMachine.gd" type="Script" id=29]
 [ext_resource path="res://assets/sfx/Spider_Attack.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/shadow2.png" type="Texture" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -75,7 +76,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 80.0
+radius = 70.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "Attack"
@@ -181,18 +182,22 @@ start_node = "None"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [sub_resource type="CircleShape2D" id=15]
-radius = 90.0
+radius = 80.0
 
 [node name="Spider" type="KinematicBody2D"]
 script = ExtResource( 9 )
 bullet_scene = ExtResource( 28 )
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( 0, 20 )
+scale = Vector2( 2.36449, 1.48598 )
+texture = ExtResource( 31 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.818817, 1.70737 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

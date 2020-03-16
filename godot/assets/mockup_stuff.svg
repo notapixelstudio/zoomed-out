@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.979899"
-     inkscape:cx="233.78321"
-     inkscape:cy="1030.2514"
+     inkscape:cx="158.77938"
+     inkscape:cy="936.30721"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -90,5 +90,22 @@
        inkscape:export-xdpi="66"
        inkscape:export-ydpi="66"
        transform="rotate(-45)" />
+    <ellipse
+       style="opacity:1;fill:#a6a6a6;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path819"
+       cx="25.796875"
+       cy="43"
+       rx="20.505209"
+       ry="5.2916665"
+       inkscape:export-xdpi="66"
+       inkscape:export-ydpi="66" />
+    <circle
+       inkscape:export-ydpi="66"
+       inkscape:export-xdpi="66"
+       cy="78.057289"
+       cx="25.796875"
+       id="ellipse825"
+       style="opacity:1;fill:#a6a6a6;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       r="20.505209" />
   </g>
 </svg>
