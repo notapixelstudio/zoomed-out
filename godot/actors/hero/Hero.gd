@@ -24,6 +24,7 @@ var move_direction = Vector2(0,0)
 func _process(delta):
 	state_machine.update(delta)
 	
+	var last_move_direction = move_direction
 	move_direction = Vector2(0,0)
 	
 	var left = Input.is_action_pressed("ui_left")
@@ -48,6 +49,12 @@ func _process(delta):
 		anim.flip_h = false
 	else: 
 		anim.flip_h = true
+		
+	if last_move_direction != move_direction:
+		if move_direction == Vector2.ZERO:
+			anim.play('idle_'+aim)
+		else:
+			anim.play(states[int(abs(move_direction.x))][int(move_direction.y)])
 		
 	move_and_slide(move_direction.normalized() * speed)
 

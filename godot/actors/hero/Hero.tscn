@@ -92,40 +92,96 @@ height = 61.4603
 
 [sub_resource type="Animation" id=3]
 resource_name = "Idle"
+length = 12.0
 loop = true
-
-[sub_resource type="Animation" id=11]
-resource_name = "None"
+tracks/0/type = "audio"
+tracks/0/path = NodePath("SFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 22 )
+} ],
+"times": PoolRealArray( 2.6 )
+}
 
 [sub_resource type="Animation" id=4]
-resource_name = "Walk"
+resource_name = "None"
+tracks/0/type = "audio"
+tracks/0/path = NodePath("SFX")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=5]
 length = 0.3
 loop = true
-
-[sub_resource type="AnimationNodeAnimation" id=5]
-animation = "Idle"
-
-[sub_resource type="AnimationNodeAnimation" id=12]
-animation = "None"
+tracks/0/type = "method"
+tracks/0/path = NodePath("FootstepsCycle")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "play"
+} ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("SFX")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": null
+} ],
+"times": PoolRealArray( 0 )
+}
 
 [sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "None"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
-[sub_resource type="AnimationNodeStateMachine" id=9]
-states/Idle/node = SubResource( 5 )
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Idle/node = SubResource( 6 )
 states/Idle/position = Vector2( 369, 49 )
-states/None/node = SubResource( 12 )
+states/None/node = SubResource( 7 )
 states/None/position = Vector2( 108, 49 )
-states/Walk/node = SubResource( 6 )
+states/Walk/node = SubResource( 8 )
 states/Walk/position = Vector2( 544, 49 )
-transitions = [ "Idle", "Walk", SubResource( 7 ), "Walk", "Idle", SubResource( 8 ) ]
+transitions = [ "Idle", "Walk", SubResource( 9 ), "Walk", "Idle", SubResource( 10 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="Hero" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -164,14 +220,14 @@ bus = "SFX"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
 anims/Idle = SubResource( 3 )
-anims/None = SubResource( 11 )
-anims/Walk = SubResource( 4 )
+anims/None = SubResource( 4 )
+anims/Walk = SubResource( 5 )
 
 [node name="StateMachine" type="AnimationTree" parent="."]
-tree_root = SubResource( 9 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 10 )
+parameters/playback = SubResource( 12 )
 script = ExtResource( 33 )
 
 [node name="Idle" type="Node" parent="StateMachine"]

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-class_name Lion
+class_name Scorpion
 
 export var speed = 60
 

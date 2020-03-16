@@ -30,6 +30,9 @@ func set_type(value):
 signal touched
 
 func _on_Fruit_body_entered(body):
+	if not body is Hero:
+		return
+		
 	if colored:
 		decolor()
 		emit_signal('touched')

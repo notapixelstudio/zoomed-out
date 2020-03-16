@@ -59,9 +59,39 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 37, 50, 61 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 18, 37, 50, 61, 90, 100, 135, 190, 228, 256, 266, 278, 293 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "spawn_scorpion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
 "args": [  ],
 "method": "spawn_lion"
 }, {
@@ -93,6 +123,7 @@ position = Vector2( 390, 237 )
 
 [node name="Fruit3" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( -416, -96 )
+type = 1
 
 [node name="Paths" type="Node2D" parent="."]
 
@@ -115,14 +146,14 @@ __meta__ = {
 
 [node name="ColorableArea" type="Area2D" parent="Areas"]
 position = Vector2( 0, 32 )
-scale = Vector2( 1.33333, 1.33333 )
+scale = Vector2( 1.25333, 1.25333 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ColorableArea"]
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="Areas"]
 current = true
-zoom = Vector2( 1.10417, 1.10417 )
+zoom = Vector2( 1.01917, 1.01917 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Areas"]
 autoplay = "zoom-out"

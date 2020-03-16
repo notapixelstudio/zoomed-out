@@ -58,6 +58,15 @@ func _on_TextureProgress_value_changed(value):
 func get_playfield_extents():
 	return Vector2(512*camera.zoom.x, 300*camera.zoom.y) # warning: hardcoded
 
+# scorpion spawning
+var scorpion_scene = preload('res://actors/scorpion/Scorpion.tscn')
+
+func spawn_scorpion():
+	var scorpion = scorpion_scene.instance()
+	scorpion.position.x = -get_playfield_extents().x*1.2
+	scorpion.position.y = player.position.y
+	playfield.add_child(scorpion)
+
 # lion spawning
 var lion_scene = preload('res://actors/lion/Lion.tscn')
 

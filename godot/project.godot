@@ -27,6 +27,11 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Lion",
 "language": "GDScript",
+"path": "res://actors/scorpion/Scorpion.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Scorpion",
+"language": "GDScript",
 "path": "res://actors/lion/Lion.gd"
 }, {
 "base": "KinematicBody2D",
@@ -44,6 +49,7 @@ _global_script_class_icons={
 "Fruit": "",
 "Hero": "",
 "Lion": "",
+"Scorpion": "",
 "Spider": "",
 "State": ""
 }
