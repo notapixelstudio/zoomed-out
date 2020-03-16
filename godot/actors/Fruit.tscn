@@ -34,7 +34,9 @@ tracks/1/keys = {
 "values": [ 1.0, 3.0, 1.0 ]
 }
 
-[node name="Fruit" type="Area2D"]
+[node name="Fruit" type="Area2D" groups=[
+"colorable",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

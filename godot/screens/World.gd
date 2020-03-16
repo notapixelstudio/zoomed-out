@@ -33,7 +33,7 @@ func color():
 		return
 		
 	var chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
-	while last_chosen_thingy == chosen_thingy or chosen_thingy is Spider:
+	while last_chosen_thingy == chosen_thingy or not chosen_thingy.is_in_group('colorable'):
 		chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
 	last_chosen_thingy = chosen_thingy
 	
@@ -75,3 +75,8 @@ func spawn_lion():
 	lion.position.x = player.position.x
 	lion.position.y = -get_playfield_extents().y*1.2
 	playfield.add_child(lion)
+
+
+func _on_Spider_spawn_bullet(bullet):
+	add_child(bullet)
+	

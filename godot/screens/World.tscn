@@ -160,10 +160,10 @@ position = Vector2( -1792, -608 )
 position = Vector2( -1024, 960 )
 
 [node name="Spider4" parent="Playfield" instance=ExtResource( 10 )]
-position = Vector2( 1248, -928 )
+position = Vector2( 1248, -1152 )
 
 [node name="Spider5" parent="Playfield" instance=ExtResource( 10 )]
-position = Vector2( 352, -1024 )
+position = Vector2( 352, -1248 )
 
 [node name="Fruit" parent="Playfield" instance=ExtResource( 2 )]
 position = Vector2( 205, 37 )
@@ -290,4 +290,9 @@ bus = "Music"
 [node name="PickupSoundCycle" parent="." instance=ExtResource( 18 )]
 streams = [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 16 ) ]
 bus = "SFX"
+[connection signal="spawn_bullet" from="Playfield/Spider1" to="." method="_on_Spider_spawn_bullet"]
+[connection signal="spawn_bullet" from="Playfield/Spider2" to="." method="_on_Spider_spawn_bullet"]
+[connection signal="spawn_bullet" from="Playfield/Spider3" to="." method="_on_Spider_spawn_bullet"]
+[connection signal="spawn_bullet" from="Playfield/Spider4" to="." method="_on_Spider_spawn_bullet"]
+[connection signal="spawn_bullet" from="Playfield/Spider5" to="." method="_on_Spider_spawn_bullet"]
 [connection signal="value_changed" from="CanvasLayer/TextureProgress" to="." method="_on_TextureProgress_value_changed"]
