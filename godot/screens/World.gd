@@ -9,6 +9,8 @@ onready var bucket_head = $CanvasLayer/PlayerHUD/BucketGuyHead
 onready var pickup_sound_cycle = $PickupSoundCycle
 onready var camera = $Areas/Camera2D
 onready var player_hud = $CanvasLayer/PlayerHUD
+onready var canvas = $CanvasLayer
+onready var gameover = $CanvasLayer/GameOver
 
 var next_color = Fruit.get_fruit_color(Fruit.types.apple)
 
@@ -54,7 +56,9 @@ func _on_player_hurt(quantity):
 	bar.decrease_bar(quantity)
 
 func game_over():
-	print("GAME OVER")
+	gameover.initialize()
+	get_tree().paused = true
+	
 	
 func _on_TextureProgress_value_changed(value):
 	if value <= 0:
