@@ -4,6 +4,7 @@ extends Area2D
 class_name Fruit
 
 onready var animation_player = $AnimationPlayer
+onready var sprite = $Sprite
 
 var colored = false
 export var point = 10
@@ -39,14 +40,14 @@ func _on_Fruit_body_entered(body):
 		
 func color():
 	colored = true
-	modulate = fruits_data[type]['color']
+	sprite.modulate = fruits_data[type]['color']
 	animation_player.play("blink")
 	return fruits_data[type]['color']
 
 func decolor():
 	colored = false
 	animation_player.play("idle")
-	modulate = Color(1,1,1,1)
+	sprite.modulate = Color(1,1,1,1)
 	
 static func get_fruit_color(fruit):
 	return fruits_data[fruit]['color']
