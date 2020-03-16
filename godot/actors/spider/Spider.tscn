@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0007.png" type="Texture" id=1]
 [ext_resource path="res://assets/anim/enemies/spider/idle/Sipder_IDLE_0006.png" type="Texture" id=2]
@@ -30,17 +30,13 @@
 [ext_resource path="res://actors/Bullet.tscn" type="PackedScene" id=28]
 [ext_resource path="res://utils/StateMachine.gd" type="Script" id=29]
 [ext_resource path="res://assets/sfx/Spider_Attack.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/shadow2.png" type="Texture" id=31]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "idle_down",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "walk_down_45",
+"name": "walk_horiz",
 "speed": 16.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
@@ -53,10 +49,20 @@ animations = [ {
 "name": "walk_up",
 "speed": 16.0
 }, {
+"frames": [ ExtResource( 8 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 11 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "idle_down",
+"speed": 8.0
+}, {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "walk_horiz",
+"name": "walk_down_45",
 "speed": 16.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 27 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attack",
+"speed": 14.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 10 ) ],
 "loop": true,
@@ -67,17 +73,12 @@ animations = [ {
 "loop": true,
 "name": "walk_down",
 "speed": 16.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 27 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "attack",
-"speed": 14.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 80.0
+radius = 70.0
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=3]
 resource_name = "Attack"
 tracks/0/type = "method"
 tracks/0/path = NodePath("AnimatedSprite")
@@ -122,9 +123,8 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Idle"
-length = 3.0
+[sub_resource type="Animation" id=4]
+length = 4.0
 tracks/0/type = "method"
 tracks/0/path = NodePath("AnimatedSprite")
 tracks/0/interp = 1
@@ -140,57 +140,66 @@ tracks/0/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=5]
 resource_name = "None"
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=6]
 length = 0.3
 loop = true
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Attack"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "None"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=11]
-states/Attack/node = SubResource( 14 )
+[sub_resource type="AnimationNodeStateMachine" id=13]
+states/Attack/node = SubResource( 7 )
 states/Attack/position = Vector2( 565, 49 )
-states/Idle/node = SubResource( 6 )
+states/Idle/node = SubResource( 8 )
 states/Idle/position = Vector2( 369, 49 )
-states/None/node = SubResource( 7 )
+states/None/node = SubResource( 9 )
 states/None/position = Vector2( 108, 49 )
-states/Walk/node = SubResource( 8 )
+states/Walk/node = SubResource( 10 )
 states/Walk/position = Vector2( 129, 148 )
-transitions = [ "Idle", "Attack", SubResource( 15 ), "Attack", "Idle", SubResource( 16 ) ]
+transitions = [ "Idle", "Attack", SubResource( 11 ), "Attack", "Idle", SubResource( 12 ) ]
 start_node = "None"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 80.0
 
 [node name="Spider" type="KinematicBody2D"]
 script = ExtResource( 9 )
 bullet_scene = ExtResource( 28 )
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( 0, 20 )
+scale = Vector2( 2.36449, 1.48598 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 31 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.818817, 1.70737 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -198,16 +207,16 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Idle"
-anims/Attack = SubResource( 13 )
-anims/Idle = SubResource( 3 )
-anims/None = SubResource( 17 )
-anims/Walk = SubResource( 18 )
+anims/Attack = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/None = SubResource( 5 )
+anims/Walk = SubResource( 6 )
 
 [node name="StateMachine" type="AnimationTree" parent="."]
-tree_root = SubResource( 11 )
+tree_root = SubResource( 13 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 12 )
+parameters/playback = SubResource( 14 )
 script = ExtResource( 29 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
@@ -215,4 +224,11 @@ script = ExtResource( 29 )
 [node name="SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 30 )
 bus = "SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource( 15 )
 [connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_screen_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

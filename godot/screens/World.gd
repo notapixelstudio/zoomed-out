@@ -14,6 +14,7 @@ onready var gameover = $CanvasLayer/GameOver
 
 var next_color = Fruit.get_fruit_color(Fruit.types.apple)
 
+var next_fruit_type = Fruit.types.apple
 var last_chosen_thingy = null
 
 func _ready():
@@ -27,7 +28,7 @@ func _ready():
 func color():
 	bar.tint_progress = next_color
 	bucket_head.modulate = next_color
-	player.modulate = next_color
+	player.color(next_color)
 	
 	yield(get_tree().create_timer(1), "timeout")
 	
@@ -38,7 +39,7 @@ func color():
 		return
 		
 	var chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
-	while last_chosen_thingy == chosen_thingy or not chosen_thingy.is_in_group('colorable'):
+	while last_chosen_thingy == chosen_thingy or not chosen_thingy.is_in_group('colorable') or chosen_thingy.type != next_fruit_type:
 		chosen_thingy = colorable_thingies[randi() % len(colorable_thingies)]
 	last_chosen_thingy = chosen_thingy
 	
@@ -89,3 +90,9 @@ func spawn_lion():
 func _on_Spider_spawn_bullet(bullet):
 	add_child(bullet)
 	
+func advance_fruit_type():
+	next_fruit_type = min(next_fruit_type+1, len(Fruit.types))
+	bar.max_value += 2
+
+func back_with_fruit_type():
+	next_fruit_type = max(next_fruit_type-1, 0)

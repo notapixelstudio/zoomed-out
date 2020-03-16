@@ -4,6 +4,7 @@ class_name Hero
 
 const speed = 400
 onready var anim = $AnimatedSprite
+onready var anim_white = $AnimatedSpriteWhite
 onready var debug = $Debug
 onready var state_machine = $StateMachine
 
@@ -20,6 +21,9 @@ const states = {
 
 var aim = "up" # or down
 var move_direction = Vector2(0,0)
+
+func _ready():
+	animated_sprites_play('idle_down')
 
 func _process(delta):
 	state_machine.update(delta)
@@ -45,16 +49,19 @@ func _process(delta):
 	
 	if move_direction.x == 0:
 		anim.flip_h = anim.flip_h
+		anim_white.flip_h = anim_white.flip_h
 	elif move_direction.x == 1:
 		anim.flip_h = false
-	else: 
+		anim_white.flip_h = false
+	else:
 		anim.flip_h = true
+		anim_white.flip_h = true
 		
 	if last_move_direction != move_direction:
 		if move_direction == Vector2.ZERO:
-			anim.play('idle_'+aim)
+			animated_sprites_play('idle_'+aim)
 		else:
-			anim.play(states[int(abs(move_direction.x))][int(move_direction.y)])
+			animated_sprites_play(states[int(abs(move_direction.x))][int(move_direction.y)])
 		
 	move_and_slide(move_direction.normalized() * speed)
 
@@ -63,4 +70,13 @@ func hurt(quantity):
 
 func _on_StateMachine_transition(from, to):
 	debug.text = to
+	
+func color(c):
+	anim.modulate = c
+	
+func animated_sprites_play(sth):
+	anim.frame = 0
+	anim_white.frame = 0
+	anim.play(sth)
+	anim_white.play(sth)
 	
