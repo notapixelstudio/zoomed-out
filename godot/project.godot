@@ -58,6 +58,7 @@ _global_script_class_icons={
 
 config/name="ZoomedOut"
 run/main_scene="res://screens/World.tscn"
+config/icon="res://assets/hud/bucket_guy.png"
 
 [display]
 
