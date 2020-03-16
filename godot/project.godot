@@ -22,18 +22,36 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Hero",
 "language": "GDScript",
-"path": "res://actors/Hero.gd"
+"path": "res://actors/hero/Hero.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "SpiderController",
+"class": "Lion",
 "language": "GDScript",
-"path": "res://actors/SpiderController.gd"
+"path": "res://actors/scorpion/Scorpion.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Scorpion",
+"language": "GDScript",
+"path": "res://actors/lion/Lion.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Spider",
+"language": "GDScript",
+"path": "res://actors/spider/Spider.gd"
+}, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://utils/State.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
 "Fruit": "",
 "Hero": "",
-"SpiderController": ""
+"Lion": "",
+"Scorpion": "",
+"Spider": "",
+"State": ""
 }
 
 [application]

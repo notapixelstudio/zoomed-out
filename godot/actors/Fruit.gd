@@ -6,7 +6,7 @@ class_name Fruit
 onready var animation_player = $AnimationPlayer
 
 var colored = false
-export var point = 3
+export var point = 10
 
 const fruits_data = [
 	{'texture': 'apple', 'color': Color('#ff4c4c')},
@@ -30,6 +30,9 @@ func set_type(value):
 signal touched
 
 func _on_Fruit_body_entered(body):
+	if not body is Hero:
+		return
+		
 	if colored:
 		decolor()
 		emit_signal('touched')
@@ -38,9 +41,11 @@ func color():
 	colored = true
 	modulate = fruits_data[type]['color']
 	animation_player.play("blink")
+	return fruits_data[type]['color']
 
 func decolor():
 	colored = false
+	animation_player.play("idle")
 	modulate = Color(1,1,1,1)
 	
 static func get_fruit_color(fruit):
