@@ -11,7 +11,6 @@
 [ext_resource path="res://assets/anim/idle/Timeline 1_0005.png" type="Texture" id=9]
 [ext_resource path="res://assets/anim/idle/Timeline 1_0000.png" type="Texture" id=10]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 6 ), ExtResource( 2 ) ],
@@ -30,5 +29,5 @@ position = Vector2( 253.864, 302.96 )
 scale = Vector2( 0.229, 0.229 )
 frames = SubResource( 1 )
 animation = "ref_idle"
-frame = 5
+frame = 6
 playing = true
