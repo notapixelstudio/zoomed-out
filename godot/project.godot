@@ -25,9 +25,14 @@ _global_script_classes=[ {
 "path": "res://actors/hero/Hero.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "Lion",
+"language": "GDScript",
+"path": "res://actors/lion/Lion.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Spider",
 "language": "GDScript",
-"path": "res://actors/Spider.gd"
+"path": "res://actors/spider/Spider.gd"
 }, {
 "base": "Node",
 "class": "State",
@@ -38,6 +43,7 @@ _global_script_class_icons={
 "Enemy": "",
 "Fruit": "",
 "Hero": "",
+"Lion": "",
 "Spider": "",
 "State": ""
 }

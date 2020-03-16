@@ -6,7 +6,7 @@ class_name Fruit
 onready var animation_player = $AnimationPlayer
 
 var colored = false
-export var point = 3
+export var point = 10
 
 const fruits_data = [
 	{'texture': 'apple', 'color': Color('#ff4c4c')},
@@ -38,6 +38,7 @@ func color():
 	colored = true
 	modulate = fruits_data[type]['color']
 	animation_player.play("blink")
+	return fruits_data[type]['color']
 
 func decolor():
 	colored = false

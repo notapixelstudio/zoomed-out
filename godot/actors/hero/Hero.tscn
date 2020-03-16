@@ -131,15 +131,14 @@ start_node = "Idle"
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 5, -10 )
+position = Vector2( 5, -74 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
-frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 18 )
+position = Vector2( 0, -46 )
 shape = SubResource( 2 )
 
 [node name="Debug" type="Label" parent="."]

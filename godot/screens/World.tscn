@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/hud/bucket_guy_WHITE.png" type="Texture" id=7]
 [ext_resource path="res://assets/hud/bucket_guy.png" type="Texture" id=8]
 [ext_resource path="res://assets/music/QJ_Music.wav" type="AudioStream" id=9]
-[ext_resource path="res://actors/Spider.tscn" type="PackedScene" id=10]
+[ext_resource path="res://actors/spider/Spider.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/sfx/pickup/Pickup02.wav" type="AudioStream" id=11]
 [ext_resource path="res://actors/Path2D.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/sfx/pickup/Pickup01.wav" type="AudioStream" id=13]
@@ -17,17 +17,17 @@
 [ext_resource path="res://assets/sfx/pickup/Pickup05.wav" type="AudioStream" id=16]
 [ext_resource path="res://utils/SoundCycle.tscn" type="PackedScene" id=18]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 576, 256, 0, 0, 0, 0, 576, -448, 0, 0, 0, 0, 576, 256 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1024, 256, 0, 0, 0, 0, 1024, -448, 0, 0, 0, 0, 1024, 256 )
 }
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 484.326, 240 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 360, 180 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 300.0
-step = 10.0
+step = 1.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
 tracks/0/interp = 1
@@ -38,7 +38,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 300 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 5, 5 ) ]
+"values": [ Vector2( 0.75, 0.75 ), Vector2( 5, 5 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("ColorableArea:scale")
@@ -52,76 +52,81 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 5, 5 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 37, 50, 61 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+}, {
+"args": [  ],
+"method": "spawn_lion"
+} ]
+}
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Hero" parent="." instance=ExtResource( 1 )]
+[node name="Playfield" type="YSort" parent="."]
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Hero" parent="Playfield" instance=ExtResource( 1 )]
+position = Vector2( -211, 101 )
 
-[node name="Spider" parent="Enemies" instance=ExtResource( 10 )]
-position = Vector2( 576, 256 )
-
-[node name="Path2D" parent="Enemies" instance=ExtResource( 12 )]
-curve = SubResource( 3 )
-
-[node name="PathFollow2D" parent="Enemies/Path2D" index="0"]
-position = Vector2( 576, 256 )
+[node name="Spider1" parent="Playfield" instance=ExtResource( 10 )]
+position = Vector2( 1024, 256 )
 rotation = -1.5708
 
-[node name="RemoteTransform2D" parent="Enemies/Path2D/PathFollow2D" index="0"]
-remote_path = NodePath("../../../Spider")
+[node name="Fruit" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 205, 37 )
+
+[node name="Fruit2" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( 390, 237 )
+
+[node name="Fruit3" parent="Playfield" instance=ExtResource( 2 )]
+position = Vector2( -416, -96 )
+
+[node name="Paths" type="Node2D" parent="."]
+
+[node name="Spider1" parent="Paths" instance=ExtResource( 12 )]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" parent="Paths/Spider1" index="0"]
+position = Vector2( 1024, 256 )
+rotation = -1.5708
+
+[node name="RemoteTransform2D" parent="Paths/Spider1/PathFollow2D" index="0"]
+remote_path = NodePath("../../../../YSort/Spider1")
 update_rotation = false
-update_scale = false
 
-[node name="Fruits" type="Node2D" parent="."]
-
-[node name="Thingy" parent="Fruits" instance=ExtResource( 2 )]
-position = Vector2( -256, 64 )
-
-[node name="Thingy2" parent="Fruits" instance=ExtResource( 2 )]
-position = Vector2( 128, 224 )
-type = 1
-
-[node name="Thingy35" parent="Fruits" instance=ExtResource( 2 )]
-position = Vector2( -384, 192 )
-type = 4
-
-[node name="Thingy38" parent="Fruits" instance=ExtResource( 2 )]
-position = Vector2( -320, -160 )
-type = 3
-
-[node name="Thingy3" parent="Fruits" instance=ExtResource( 2 )]
-position = Vector2( 384, -160 )
-type = 5
-
-[node name="Thingy31" parent="Fruits" instance=ExtResource( 2 )]
-position = Vector2( 96, -128 )
-type = 2
-
-[node name="Thingy30" parent="Fruits" instance=ExtResource( 2 )]
-position = Vector2( 448, 96 )
-type = 6
-
-[node name="Playfield" type="Node2D" parent="."]
+[node name="Areas" type="Node2D" parent="."]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
 
-[node name="ColorableArea" type="Area2D" parent="Playfield"]
+[node name="ColorableArea" type="Area2D" parent="Areas"]
 position = Vector2( 0, 32 )
+scale = Vector2( 1.33333, 1.33333 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Playfield/ColorableArea"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/ColorableArea"]
+shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="Playfield"]
+[node name="Camera2D" type="Camera2D" parent="Areas"]
 current = true
+zoom = Vector2( 1.10417, 1.10417 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Playfield"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Areas"]
 autoplay = "zoom-out"
-anims/zoom-out = SubResource( 2 )
+anims/zoom-out = SubResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -132,7 +137,8 @@ margin_top = 41.0
 margin_right = -25.0
 margin_bottom = 84.0
 size_flags_horizontal = 0
-value = 100.0
+max_value = 10.0
+value = 10.0
 rounded = true
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )
@@ -166,4 +172,4 @@ streams = [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource
 bus = "SFX"
 [connection signal="value_changed" from="CanvasLayer/TextureProgress" to="." method="_on_TextureProgress_value_changed"]
 
-[editable path="Enemies/Path2D"]
+[editable path="Paths/Spider1"]
