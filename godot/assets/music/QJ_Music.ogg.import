@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/QJ_Music.ogg-003a6accae5c1777dc5c6be6ebd110ee.oggstr"
+
+[deps]
+
+source_file="res://assets/music/QJ_Music.ogg"
+dest_files=[ "res://.import/QJ_Music.ogg-003a6accae5c1777dc5c6be6ebd110ee.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

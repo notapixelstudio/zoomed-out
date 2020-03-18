@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BH_Death.ogg-41a5f4fefc77ec5fdc960694b278d416.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/BH_Death.ogg"
+dest_files=[ "res://.import/BH_Death.ogg-41a5f4fefc77ec5fdc960694b278d416.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

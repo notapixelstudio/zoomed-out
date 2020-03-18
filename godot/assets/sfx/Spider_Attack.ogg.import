@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Spider_Attack.ogg-afe30883a066f0cf943d3718d8ef2673.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/Spider_Attack.ogg"
+dest_files=[ "res://.import/Spider_Attack.ogg-afe30883a066f0cf943d3718d8ef2673.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

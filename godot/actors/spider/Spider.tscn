@@ -29,7 +29,7 @@
 [ext_resource path="res://assets/anim/enemies/spider/attack/Player_ATTACK_0008.png" type="Texture" id=27]
 [ext_resource path="res://actors/Bullet.tscn" type="PackedScene" id=28]
 [ext_resource path="res://utils/StateMachine.gd" type="Script" id=29]
-[ext_resource path="res://assets/sfx/Spider_Attack.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/sfx/Spider_Attack.ogg" type="AudioStream" id=30]
 [ext_resource path="res://assets/shadow2.png" type="Texture" id=31]
 
 [sub_resource type="SpriteFrames" id=1]

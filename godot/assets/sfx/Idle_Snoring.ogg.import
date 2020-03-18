@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Idle_Snoring.ogg-c5d16af690d299faf8da56c3c6f8dd1c.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/Idle_Snoring.ogg"
+dest_files=[ "res://.import/Idle_Snoring.ogg-c5d16af690d299faf8da56c3c6f8dd1c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

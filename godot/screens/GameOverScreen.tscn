@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/hud/GameOver.png" type="Texture" id=1]
-[ext_resource path="res://assets/music/Game Over_Music.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/music/Game Over_Music.ogg" type="AudioStream" id=2]
 [ext_resource path="res://utils/Button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/hud/GameOver_Button_QUIT_active.png" type="Texture" id=4]
 [ext_resource path="res://assets/hud/GameOver_Button_QUIT_inactive.png" type="Texture" id=5]
