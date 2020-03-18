@@ -63,6 +63,8 @@ func game_over():
 	
 func _on_TextureProgress_value_changed(value):
 	if value <= 0:
+		player.die()
+		yield(player, 'died')
 		game_over()
 
 func get_playfield_extents():

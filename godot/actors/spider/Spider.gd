@@ -15,6 +15,7 @@ func shoot(how_many):
 		var bullet = bullet_scene.instance()
 		bullet.position = position
 		bullet.angle = 2*PI/how_many*i
+		bullet.rotation = bullet.angle
 		emit_signal("spawn_bullet", bullet)
 		# will be taken care from World.
 
