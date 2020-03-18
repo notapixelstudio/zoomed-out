@@ -34,6 +34,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 21 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 27 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "attack",
+"speed": 14.0
+}, {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "walk_horiz",
@@ -58,11 +63,6 @@ animations = [ {
 "loop": true,
 "name": "walk_down_45",
 "speed": 16.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 14 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 1 ), ExtResource( 27 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "attack",
-"speed": 14.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 23 ), ExtResource( 10 ) ],
 "loop": true,
@@ -200,6 +200,7 @@ position = Vector2( 0.818817, 1.70737 )
 scale = Vector2( 0.22902, 0.22902 )
 frames = SubResource( 1 )
 animation = "idle_down"
+frame = 5
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

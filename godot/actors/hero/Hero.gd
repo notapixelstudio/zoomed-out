@@ -28,6 +28,10 @@ func _ready():
 func _process(delta):
 	state_machine.update(delta)
 	
+	if state_machine.get_current_state() == 'Death' or state_machine.get_current_state() == 'None':
+		return
+		
+		
 	var last_move_direction = move_direction
 	move_direction = Vector2(0,0)
 	
@@ -68,8 +72,16 @@ func _process(delta):
 func hurt(quantity):
 	emit_signal("hurt", quantity)
 
+signal died
+func die():
+	anim.modulate = Color(1,1,1,1)
+	state_machine.travel('Death')
+	
 func _on_StateMachine_transition(from, to):
 	debug.text = to
+	
+	if from == 'Death':
+		emit_signal('died')
 	
 func color(c):
 	anim.modulate = c

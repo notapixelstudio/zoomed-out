@@ -56,7 +56,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="ZoomedOut"
+config/name="BucketGuy"
 run/main_scene="res://screens/Menu.tscn"
 config/icon="res://assets/hud/bucket_guy.png"
 
