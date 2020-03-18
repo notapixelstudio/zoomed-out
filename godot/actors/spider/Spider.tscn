@@ -71,7 +71,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 10 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 22 ), ExtResource( 4 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "walk_down",
+"name": "walk_down_45",
 "speed": 16.0
 } ]
 
