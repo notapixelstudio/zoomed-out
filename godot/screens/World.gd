@@ -59,10 +59,13 @@ func _on_player_hurt(quantity):
 func game_over():
 	gameover.initialize()
 	get_tree().paused = true
-	
+
+func stop():
+	player_hud.stop_timer()
 	
 func _on_TextureProgress_value_changed(value):
 	if value <= 0:
+		stop()
 		player.die()
 		yield(player, 'died')
 		game_over()
