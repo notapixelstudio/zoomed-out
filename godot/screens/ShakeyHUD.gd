@@ -1,6 +1,10 @@
 extends Node2D
+
 export var shake_power = 4
 export var shake_time = 0.4
+
+onready var time = $TimePassed
+
 var isShake = false
 var curPos
 var elapsedtime = 0

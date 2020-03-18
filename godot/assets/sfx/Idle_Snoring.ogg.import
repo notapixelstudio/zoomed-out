@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Idle_Snoring.ogg-c5d16af690d299faf8da56c3c6f8dd1c.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

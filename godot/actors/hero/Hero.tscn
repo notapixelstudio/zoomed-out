@@ -102,54 +102,79 @@
 [ext_resource path="res://assets/sfx/BH_Death.ogg" type="AudioStream" id=100]
 [ext_resource path="res://actors/hero/states/None.gd" type="Script" id=101]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=18]
 animations = [ {
-"frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "walk_horiz",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "walk_down",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 65 ), ExtResource( 67 ), ExtResource( 75 ), ExtResource( 66 ), ExtResource( 76 ), ExtResource( 72 ), ExtResource( 78 ), ExtResource( 69 ), ExtResource( 64 ) ],
-"loop": true,
-"name": "idle_up",
+"frames": [  ],
+"loop": false,
+"name": "death",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 68 ), ExtResource( 70 ), ExtResource( 77 ), ExtResource( 74 ), ExtResource( 73 ), ExtResource( 71 ) ],
-"loop": true,
-"name": "walk_up",
-"speed": 10.0
 }, {
 "frames": [ ExtResource( 54 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 55 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "idle_down",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 65 ), ExtResource( 67 ), ExtResource( 75 ), ExtResource( 66 ), ExtResource( 76 ), ExtResource( 72 ), ExtResource( 78 ), ExtResource( 69 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 57 ) ],
 "loop": true,
 "name": "walk_down_45",
 "speed": 10.0
 }, {
-"frames": [  ],
-"loop": false,
-"name": "death",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 68 ), ExtResource( 70 ), ExtResource( 77 ), ExtResource( 74 ), ExtResource( 73 ), ExtResource( 71 ) ],
 "loop": true,
 "name": "walk_up_45",
 "speed": 10.0
-} ]
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 28 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 14 ) ],
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 70 ), ExtResource( 77 ), ExtResource( 74 ), ExtResource( 73 ), ExtResource( 71 ) ],
+"loop": true,
+"name": "walk_up",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "walk_down",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 62 ), ExtResource( 57 ) ],
 "loop": true,
 "name": "walk_horiz",
+"speed": 10.0
+} ]
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ ExtResource( 86 ), ExtResource( 79 ), ExtResource( 97 ), ExtResource( 82 ), ExtResource( 96 ), ExtResource( 81 ), ExtResource( 88 ), ExtResource( 92 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 89 ), ExtResource( 99 ), ExtResource( 95 ), ExtResource( 83 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 80 ), ExtResource( 94 ), ExtResource( 90 ), ExtResource( 93 ) ],
+"loop": false,
+"name": "death",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 34 ), ExtResource( 15 ), ExtResource( 38 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 39 ), ExtResource( 4 ), ExtResource( 16 ), ExtResource( 29 ), ExtResource( 1 ), ExtResource( 37 ), ExtResource( 7 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle_up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "walk_down_45",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 40 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_up_45",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 40 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_up",
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 28 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 14 ) ],
@@ -157,41 +182,16 @@ animations = [ {
 "name": "walk_down",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 39 ), ExtResource( 4 ), ExtResource( 16 ), ExtResource( 29 ), ExtResource( 1 ), ExtResource( 37 ), ExtResource( 7 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "idle_up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 40 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_up",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 31 ), ExtResource( 34 ), ExtResource( 15 ), ExtResource( 38 ), ExtResource( 30 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 36 ) ],
-"loop": true,
-"name": "idle_down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 28 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 23 ), ExtResource( 6 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "walk_down_45",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 86 ), ExtResource( 79 ), ExtResource( 97 ), ExtResource( 82 ), ExtResource( 96 ), ExtResource( 81 ), ExtResource( 88 ), ExtResource( 92 ), ExtResource( 84 ), ExtResource( 87 ), ExtResource( 89 ), ExtResource( 99 ), ExtResource( 95 ), ExtResource( 83 ), ExtResource( 98 ), ExtResource( 91 ), ExtResource( 80 ), ExtResource( 94 ), ExtResource( 90 ), ExtResource( 93 ) ],
-"loop": false,
-"name": "death",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 26 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 40 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_up_45",
+"name": "walk_horiz",
 "speed": 10.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=20]
 radius = 20.0
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=21]
 resource_name = "Death"
 length = 2.0
 tracks/0/type = "audio"
@@ -209,7 +209,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=22]
 length = 12.0
 loop = true
 tracks/0/type = "audio"
@@ -219,15 +219,11 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"clips": [ {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource( 22 )
-} ],
-"times": PoolRealArray( 2.6 )
+"clips": [  ],
+"times": PoolRealArray(  )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=23]
 tracks/0/type = "audio"
 tracks/0/path = NodePath("SFX")
 tracks/0/interp = 1
@@ -243,7 +239,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=24]
 length = 0.3
 loop = true
 tracks/0/type = "method"
@@ -311,7 +307,7 @@ states/Walk/position = Vector2( 544, 49 )
 transitions = [ "Idle", "Walk", SubResource( 12 ), "Walk", "Idle", SubResource( 13 ), "Idle", "Death", SubResource( 14 ), "Walk", "Death", SubResource( 15 ), "Death", "None", SubResource( 16 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
 
 [node name="Hero" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -326,19 +322,19 @@ texture = ExtResource( 63 )
 [node name="AnimatedSpriteWhite" type="AnimatedSprite" parent="."]
 position = Vector2( -7.15256e-07, -74 )
 scale = Vector2( 0.22902, 0.22902 )
-frames = SubResource( 1 )
+frames = SubResource( 18 )
 animation = "death"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -7.15256e-07, -74 )
 scale = Vector2( 0.22902, 0.22902 )
-frames = SubResource( 2 )
+frames = SubResource( 19 )
 animation = "death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -5 )
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 20 )
 
 [node name="Debug" type="Label" parent="."]
 visible = false
@@ -361,17 +357,16 @@ stream = ExtResource( 22 )
 bus = "SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Idle"
-anims/Death = SubResource( 4 )
-anims/Idle = SubResource( 5 )
-anims/None = SubResource( 6 )
-anims/Walk = SubResource( 7 )
+anims/Death = SubResource( 21 )
+anims/Idle = SubResource( 22 )
+anims/None = SubResource( 23 )
+anims/Walk = SubResource( 24 )
 
 [node name="StateMachine" type="AnimationTree" parent="."]
 tree_root = SubResource( 17 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 18 )
+parameters/playback = SubResource( 25 )
 script = ExtResource( 33 )
 
 [node name="Idle" type="Node" parent="StateMachine"]

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/BH_Death.ogg-41a5f4fefc77ec5fdc960694b278d416.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

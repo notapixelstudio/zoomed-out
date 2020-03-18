@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Button_Hover.ogg-211122e0ea674c1db7f9ab5d44f99260.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

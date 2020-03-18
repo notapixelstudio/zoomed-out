@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Button_Select.ogg-a6adbd6102eb6642474971d18dac8bea.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

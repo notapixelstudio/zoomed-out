@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Spider_Attack.ogg-afe30883a066f0cf943d3718d8ef2673.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
