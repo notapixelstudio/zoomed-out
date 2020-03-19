@@ -16,7 +16,7 @@
 [ext_resource path="res://assets/sfx/pickup/Pickup03.ogg" type="AudioStream" id=14]
 [ext_resource path="res://screens/GameOverScreen.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/sfx/pickup/Pickup05.ogg" type="AudioStream" id=16]
-[ext_resource path="res://assets/font/digital-dream/DIGITALDREAM.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://assets/font/digital-dream/DIGITALDREAMFAT.ttf" type="DynamicFontData" id=17]
 [ext_resource path="res://utils/SoundCycle.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
